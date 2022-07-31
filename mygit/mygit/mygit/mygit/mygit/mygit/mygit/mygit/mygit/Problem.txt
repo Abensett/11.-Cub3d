@@ -1,1 +1,0 @@
-segfault quand je read un dossier
