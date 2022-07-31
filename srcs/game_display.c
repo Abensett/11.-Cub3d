@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:06:03 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 01:44:56 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ unsigned int	img_pix_get(t_img *img, int x, int y)
 	return ((*(int *)pixel << 16 | *(int *)pixel1 << 8 | *(int *)pixel2));
 }
 
+/* m */
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
 {
 	char	*dst;

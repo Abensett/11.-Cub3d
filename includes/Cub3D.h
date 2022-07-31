@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/07/25 22:28:05 by abensett         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:37:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,6 @@ typedef struct s_map
 - * north = north texture 
 - floor[3] = RGB of the color of the floor
 - sky [3] =  RGB of the color of the ceiling
-- plane_x, y   =  2nd raycaster version of camera plane
-- map_x, map_y = the current square of the map the ray is in
  *********************************************************************/
 typedef struct s_texture
 {
@@ -117,6 +115,9 @@ typedef struct s_player
 	int		map_y;
 }	t_player;
 
+/***********************************************************************
+ - mlx structure
+ ************************************************************************/
 typedef struct s_mlx
 {
 	void	*mlx;

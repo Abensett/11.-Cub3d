@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:08:08 by flee              #+#    #+#             */
-/*   Updated: 2022/06/19 19:50:01 by abensett         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:21:01 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ bool	is_cub(char *file)
 /***************************************
  get_file -> stock the lines of the file into game->map.map (array of str)
  parse_map -> extract and check textures and RGB
- parse_wall ->
+ parse_wall -> check if the map is valid and close)
+ game_loop -> 
  **************************************/
 int	main(int argc, char **argv)
 {

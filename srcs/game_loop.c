@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:12:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 01:14:10 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ int	color_get(t_img *img, int x, int y)
 	ret = create_rgb(img->addr[rep], img->addr[rep + 1], img->addr[rep + 2]);
 	return (ret);
 }
+/* ************************************************************************** 
+open_img -> open texture files
+hooks ->
 
+*****************************************************************************/
 void	game_loop(t_game *game)
 {
 	game->mlx.mlx = mlx_init();
