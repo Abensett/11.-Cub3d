@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:41:49 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:42:52 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,9 +135,9 @@ void	draw_sky_2(t_game *game, int y)
 		game->ray.floor_x += game->ray.floor_step_x;
 		game->ray.floor_y += game->ray.floor_step_y;
 		my_mlx_pixel_put(&game->windows, x, y,
-			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y));
+			img_pix_get(&game->sky, game->ray.tex_x, game->ray.tex_y));
 		my_mlx_pixel_put(&game->windows, x, WINDOWS_Y - y - 1,
-			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y));
+			img_pix_get(&game->floors, game->ray.tex_x, game->ray.tex_y));
 		x++;
 	}
 }
