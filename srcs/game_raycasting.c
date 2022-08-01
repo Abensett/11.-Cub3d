@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:00:51 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:01:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	raycasting(t_game *game)
 	x = 0;
 	while (x < WINDOWS_Y)
 
-	draw_sky(game);
+	// draw_sky(game);
 	while (x < WINDOWS_X)
 	{
 		ray_init(game, x);
