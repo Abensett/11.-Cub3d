@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 04:28:51 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:31:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "Cub3D.h"
 
 static void	draw_square(t_game *game, int i, int j, int color)
 {

@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Jul 31 23:10:35 2022
+# Make data base, printed on Mon Aug  1 04:31:40 2022
 
 # Variables
 
@@ -69,9 +69,6 @@ HEAD = -I includes -I libft -I mlx
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
- 
-make: *** No rule to make target `srcs/main.o', needed by `Cub3d'.  Stop.
-
 HOME = /Users/abou
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
@@ -94,7 +91,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 15)
-SRCS = main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c
+SRCS = main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 28)
@@ -170,15 +167,21 @@ VSCODE_PID = 2756
 
 # Directories
 
-# . (device 16777234, inode 31877974): 18 files, no impossibilities.
+# . (device 16777234, inode 31877974): 17 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+
+# Not a target:
+srcs/minimap.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: Cub3d
 #  Phony target (prerequisite of .PHONY).
@@ -206,7 +209,7 @@ srcs/get_file.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-Cub3d: srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o
+Cub3d: srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/minimap.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -233,7 +236,7 @@ srcs/game_raycasting.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 23:10:15
+#  Last modified 2022-08-01 04:31:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -319,6 +322,9 @@ srcs/game_move2.o:
 # Not a target:
 srcs/game_utils2.o:
 #  Implicit rule search has not been done.
+ 
+make: *** No rule to make target `srcs/main.o', needed by `Cub3d'.  Stop.
+
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -355,7 +361,7 @@ srcs/main.o:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=25/1024=2%, Rehash=0, Collisions=0/61=0%
+# Load=26/1024=3%, Rehash=0, Collisions=0/63=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -367,6 +373,6 @@ srcs/main.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jul 31 23:10:35 2022
+# Finished Make data base on Mon Aug  1 04:31:40 2022
 
  
