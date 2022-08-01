@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:59:49 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:23:01 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ void	img_addr(t_game *game)
 			&game->west.byte_p, &game->west.line_l, &game->west.end);
 	game->windows.addr = mlx_get_data_addr(game->windows.img,
 			&game->windows.byte_p, &game->windows.line_l, &game->windows.end);
+	game->floor.addr = mlx_get_data_addr(game->floor.img,
+			&game->floor.byte_p, &game->floor.line_l, &game->floor.end);
+	game->sky.addr = mlx_get_data_addr(game->sky.img,
+			&game->sky.byte_p, &game->sky.line_l, &game->sky.end);
 }
 
 void	check_img(t_game *game)
