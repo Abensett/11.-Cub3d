@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:25:28 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:37:35 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ void	clean_img(t_game *game)
 		mlx_destroy_image(game->mlx.mlx, game->east.img);
 	if (game->windows.img)
 		mlx_destroy_image(game->mlx.mlx, game->windows.img);
-	if (game->sky.img)
-		mlx_destroy_image(game->mlx.mlx, game->sky.img);
-	if (game->floor.img)
-		mlx_destroy_image(game->mlx.mlx, game->floor.img);
 	mlx_destroy_window(game->mlx.mlx, game->mlx.windows);
 	mlx_destroy_display(game->mlx.mlx);
 	free(game->mlx.mlx);

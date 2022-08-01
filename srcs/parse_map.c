@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:42:07 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:34:16 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:38:05 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ void	parse_map(t_game *game)
 	game->texture.south = NULL;
 	game->texture.north = NULL;
 	game->texture.west = NULL;
+	game->texture.skys = NULL;
+	game->texture.floors = NULL;
 	if (!parse_texture(game) || !check_info(game))
 	{
 		free_parse(game);
