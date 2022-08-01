@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/07/31 23:37:25 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 01:55:30 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,15 @@ typedef struct s_ray
 	int		tex_x;
 	int		tex_y;
 	double	tex_pos;
+	float 	ray_dir_x0;
+	float 	ray_dir_x1;
+	float 	ray_dir_y0;
+	float 	ray_dir_y1;
+	int 	position;
+	float   pos_z;
+	float   row_distance;
+	float   floor_step_x;
+	float   floor_step_y;
 }	t_ray;
 
 /*********************************************************************

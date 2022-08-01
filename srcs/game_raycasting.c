@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:30:56 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:00:51 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,9 @@ void	raycasting(t_game *game)
 	int	x;
 
 	x = 0;
+	while (x < WINDOWS_Y)
+
+	draw_sky(game);
 	while (x < WINDOWS_X)
 	{
 		ray_init(game, x);
@@ -135,3 +138,16 @@ void	raycasting(t_game *game)
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
 }
+
+// void	draw_sky(t_game *game)
+// {
+// 	int	x;
+
+// 	x = 0;
+// 	game->ray.ray_dir_x0 =  game->player.dir_x - game->player.plane_x;
+// 	game->ray.ray_dir_x1 =  game->player.dir_x + game->player.plane_x;
+// 	game->ray.ray_dir_y0 =  game->player.dir_y - game->player.plane_y;
+// 	game->ray.ray_dir_y1 =  game->player.dir_y + game->player.plane_y;
+// 	game->ray.p = y
+
+// }
