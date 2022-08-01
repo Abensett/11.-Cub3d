@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:23:01 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:26:19 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ void	img_addr(t_game *game)
 			&game->south.byte_p, &game->south.line_l, &game->south.end);
 	game->west.addr = mlx_get_data_addr(game->west.img,
 			&game->west.byte_p, &game->west.line_l, &game->west.end);
-	game->windows.addr = mlx_get_data_addr(game->windows.img,
-			&game->windows.byte_p, &game->windows.line_l, &game->windows.end);
 	game->floor.addr = mlx_get_data_addr(game->floor.img,
 			&game->floor.byte_p, &game->floor.line_l, &game->floor.end);
 	game->sky.addr = mlx_get_data_addr(game->sky.img,
 			&game->sky.byte_p, &game->sky.line_l, &game->sky.end);
+	game->windows.addr = mlx_get_data_addr(game->windows.img,
+			&game->windows.byte_p, &game->windows.line_l, &game->windows.end);
+
 }
 
 void	check_img(t_game *game)
@@ -53,10 +54,11 @@ void	open_img(t_game *game)
 			game->texture.south, &game->south.byte_p, &game->south.line_l);
 	game->west.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.west, &game->west.byte_p, &game->west.line_l);
+	printf("$%s\n",game->texture.west);
 	game->sky.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			game->texture.west, &game->sky.byte_p, &game->sky.line_l);
+			game->texture.skys, &game->sky.byte_p, &game->sky.line_l);
 	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			game->texture.west, &game->floor.byte_p, &game->floor.line_l);
+			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);
