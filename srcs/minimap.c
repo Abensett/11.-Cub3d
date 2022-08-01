@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 04:43:20 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:46:10 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	draw_square(t_game *game, int i, int j, int color)
 
 static void	draw_player(t_game *game, int color)
 {
-	draw_square(game, game->player.pos_y, game->player.pos_x, color);
+	draw_square(game, game->player.pos_x, game->player.pos_y, color);
 }
 
 void	draw_mini_map(t_game *game, int color)
