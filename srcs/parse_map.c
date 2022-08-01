@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:42:07 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:38:05 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:43:39 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,6 @@ void	parse_map(t_game *game)
 		free_parse(game);
 		return (printf("Problem in description\n"), exit (0));
 	}
-	// game->texture.skys = ft_strdup("./img/sky.xpm");
-	// game->texture.floors = ft_strdup("./img/floor.xpm");
+	game->texture.skys = ft_strdup("./img/sky.xpm");
+	game->texture.floors = ft_strdup("./img/floor.xpm");
 }
