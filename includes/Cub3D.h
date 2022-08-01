@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 04:30:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:30:18 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,6 +202,6 @@ void			rotate_left(t_game *game);
 int				input(int key, t_game *game);
 bool			check_move(t_game *game, float tmp_x, float tmp_y);
 
-void			draw_mini_map(t_game *game, int color);
+void			draw_mini_map(t_game *game, int 6000);
 
 #endif
