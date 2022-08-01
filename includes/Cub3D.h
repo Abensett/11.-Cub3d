@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:54:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:56:46 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ typedef struct s_texture
 	char	*south;
 	char	*west;
 	char	*east;
-	char	*sky;
-	char	*floor;
+	char	*skys;
+	char	*floors;
 	int		floor[3];
 	int		f_rgb;
 	int		sky[3];
