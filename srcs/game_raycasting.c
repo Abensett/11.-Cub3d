@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:35:29 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:36:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,10 +134,10 @@ void	draw_sky_2(t_game *game, int y)
 			game->ray.cell_y)) & (TEX_SIZE - 1);
 		game->ray.floor_x += game->ray.floor_step_x;
 		game->ray.floor_y += game->ray.floor_step_y;
-		// my_mlx_pixel_put(&game->windows, x, y,
-		// 	img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
-		// my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
-		// 	img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
+		my_mlx_pixel_put(&game->windows, x, y,
+			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
+		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
+			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
 		x++;
 		printf("oh");
 	}
@@ -170,9 +170,9 @@ void	raycasting(t_game *game)
 {
 	int	x;
 
-	// x = 0;
-	// while (x < WINDOWS_Y)
-	// 	draw_sky(game, x++);
+	x = 0;
+	while (x < WINDOWS_Y)
+		draw_sky(game, x++);
 	x = 0;
 	while (x < WINDOWS_X)
 	{
