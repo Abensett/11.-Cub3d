@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 04:33:42 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:36:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	draw_square(t_game *game, int i, int j, int color)
 
 	x = WINDOWS_Y * 0.005 * j;
 	y = WINDOWS_Y * 0.005 * i;
-	while (x < WINDOWS_Y * 0.005 * (j + 1))
+	while (x < WINDOWS_X * 0.005 * (j + 1))
 	{
 		y = WINDOWS_Y * 0.005 * i;
 		while (y < WINDOWS_Y * 0.005 * (i + 1))
