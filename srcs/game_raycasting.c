@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:31:18 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:31:37 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void	ray_draw(t_game *game)
 // 	game->ray.floor_y = game->player.pos_y + game->ray.row_distance * 
 // 		game->ray.ray_dir_y0;
 // 	draw_sky_2(game, y);
-}
+// }
 
 void	raycasting(t_game *game)
 {
