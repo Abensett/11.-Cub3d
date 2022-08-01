@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:31:59 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:32:35 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ void	draw_sky_2(t_game *game, int y)
 			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
 		x++;
 	}
-	y++;
 }
 
 
@@ -170,7 +169,7 @@ void	raycasting(t_game *game)
 
 	x = 0;
 	while (x < WINDOWS_Y)
-		draw_sky(game, x);
+		draw_sky(game, x++);
 	x = 0;
 	while (x < WINDOWS_X)
 	{
