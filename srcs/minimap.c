@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 04:37:23 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:39:28 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ static void	draw_square(t_game *game, int i, int j, int color)
 	int	x;
 	int	y;
 
-	x = WINDOWS_Y * 0.05 * j;
-	y = WINDOWS_Y * 0.05 * i;
-	while (x < WINDOWS_X * 0.05 * (j + 1))
+	x = WINDOWS_Y * 0.01 * j;
+	y = WINDOWS_Y * 0.01 * i;
+	while (x < WINDOWS_X * 0.01 * (j + 1))
 	{
-		y = WINDOWS_Y * 0.005 * i;
-		while (y < WINDOWS_Y * 0.05 * (i + 1))
+		y = WINDOWS_Y * 0.01 * i;
+		while (y < WINDOWS_Y * 0.01 * (i + 1))
 		{
 			my_mlx_pixel_put(&game->windows, x, y, color);
 			y++;
