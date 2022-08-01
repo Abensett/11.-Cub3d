@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:03:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:04:03 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,7 @@ void	put_tex(t_game *game, int x)
 
 void	verline(t_game *game, int x, int sky)
 {
-	while (sky < game->ray.draw_start)
-	{
-		my_mlx_pixel_put(&game->windows, x, sky, game->texture.s_rgb);
-		sky++;
-	}
+
 	while (game->ray.draw_start < game->ray.draw_end)
 	{
 		game->ray.tex_y = (int)game->ray.tex_pos & (TEX_SIZE - 1);
@@ -65,10 +61,5 @@ void	verline(t_game *game, int x, int sky)
 		put_tex(game, x);
 		game->ray.draw_start++;
 	}
-	while (game->ray.draw_end < WINDOWS_Y)
-	{
-		my_mlx_pixel_put(&game->windows, x, game->ray.draw_end,
-			game->texture.f_rgb);
-		game->ray.draw_end++;
-	}
+	(void)sky;
 }
