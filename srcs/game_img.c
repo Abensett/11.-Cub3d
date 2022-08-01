@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:33:22 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:42:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ void	open_img(t_game *game)
 			game->texture.south, &game->south.byte_p, &game->south.line_l);
 	game->west.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.west, &game->west.byte_p, &game->west.line_l);
-	// printf("$%s\n",game->texture.west);
-	// game->sky.img = mlx_xpm_file_to_image(game->mlx.mlx,
-	// 		game->texture.skys, &game->sky.byte_p, &game->sky.line_l);
-	// game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
-	// 		game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
+	game->sky.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.skys, &game->sky.byte_p, &game->sky.line_l);
+	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);
