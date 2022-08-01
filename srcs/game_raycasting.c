@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:29:13 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:30:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,25 +119,6 @@ void	ray_draw(t_game *game)
 			- h / 2 + game->ray.line_height / 2) * game->ray.step;
 }
 
-void	raycasting(t_game *game)
-{
-	int	x;
-
-	x = 0;
-	while (x < WINDOWS_Y)
-		draw_sky(game, x);
-	x = 0;
-	while (x < WINDOWS_X)
-	{
-		ray_init(game, x);
-		ray_side_dist(game);
-		ray_hit(game);
-		ray_draw(game);
-		verline(game, x++, 0);
-	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-		game->windows.img, 0, 0);
-}
 
 void	draw_sky(t_game *game, int y)
 {
@@ -179,4 +160,24 @@ void	draw_sky(t_game *game, int y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
 			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
 	}
+}
+
+void	raycasting(t_game *game)
+{
+	int	x;
+
+	x = 0;
+	while (x < WINDOWS_Y)
+		draw_sky(game, x);
+	x = 0;
+	while (x < WINDOWS_X)
+	{
+		ray_init(game, x);
+		ray_side_dist(game);
+		ray_hit(game);
+		ray_draw(game);
+		verline(game, x++, 0);
+	}
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
+		game->windows.img, 0, 0);
 }
