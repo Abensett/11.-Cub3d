@@ -6,13 +6,13 @@
 #    By: abensett <abensett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/03 19:20:13 by flee              #+#    #+#              #
-#    Updated: 2022/08/01 04:31:31 by abensett         ###   ########.fr        #
+#    Updated: 2022/08/01 10:42:13 by abensett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= Cub3d
 
-SRCS= main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c \
+SRCS= main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c drawsky.c \
 		game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c
 
 OBJS			=	${addprefix srcs/,${SRCS:.c=.o}}

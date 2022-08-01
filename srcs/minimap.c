@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 04:47:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 10:40:05 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ void	draw_mini_map(t_game *game, int color)
 		}
 		i++;
 	}
-	draw_player(game, 65280);
+	draw_player(game, 0xFF0000);
 }

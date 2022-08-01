@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:42:07 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:43:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 10:41:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	set_background(int bck, t_game *game, char **rgb)
 		}
 	}
 }
+
 /* store floor and ceilling RGB in structure, if not found  return 0 */
 int	search_bck(t_game *game, char *str)
 {
@@ -108,7 +109,7 @@ bool	parse_texture(t_game *game)
 }
 
 /* initianalize textures, extract and check textures and RGB for floor
-	and ceiling 
+	and ceiling
 	check_info -> check RGB values*/
 void	parse_map(t_game *game)
 {

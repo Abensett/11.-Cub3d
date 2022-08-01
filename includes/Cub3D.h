@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 04:30:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 10:50:30 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,19 @@ typedef struct s_ray
 	int		tex_x;
 	int		tex_y;
 	double	tex_pos;
-	float 	ray_dir_x0;
-	float 	ray_dir_x1;
-	float 	ray_dir_y0;
-	float 	ray_dir_y1;
-	int 	position;
+	float	ray_dir_x0;
+	float	ray_dir_x1;
+	float	ray_dir_y0;
+	float	ray_dir_y1;
+	int		position;
 	float	pos_z;
 	float	row_distance;
 	float	floor_step_x;
-	float   floor_step_y;
-	float   floor_x;
-	float   floor_y;
-	int 	cell_x;
-	int 	cell_y;
+	float	floor_step_y;
+	float	floor_x;
+	float	floor_y;
+	int		cell_x;
+	int		cell_y;
 }	t_ray;
 
 /*********************************************************************
@@ -92,7 +92,7 @@ typedef struct s_map
 }	t_map;
 
 /*********************************************************************
-- * north = north texture 
+- * north = north texture
 - floor[3] = RGB of the color of the floor
 - sky [3] =  RGB of the color of the ceiling
  *********************************************************************/
@@ -203,5 +203,6 @@ int				input(int key, t_game *game);
 bool			check_move(t_game *game, float tmp_x, float tmp_y);
 
 void			draw_mini_map(t_game *game, int color);
+void			draw_sky(t_game *game, int y);
 
 #endif
