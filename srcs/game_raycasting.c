@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:34:03 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:35:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,8 @@ void	draw_sky(t_game *game, int y)
 	game->ray.floor_y = game->player.pos_y + game->ray.row_distance * 
 		game->ray.ray_dir_y0;
 	draw_sky_2(game, y);
+	printf("oh");
+
 }
 
 void	raycasting(t_game *game)
