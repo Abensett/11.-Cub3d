@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:10:52 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:55:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ void	open_img(t_game *game)
 			game->texture.south, &game->south.byte_p, &game->south.line_l);
 	game->west.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.west, &game->west.byte_p, &game->west.line_l);
+	game->sky.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.sky, &game->sky.byte_p, &game->sky.line_l);
+	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.floor, &game->floor.byte_p, &game->floor.line_l);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);

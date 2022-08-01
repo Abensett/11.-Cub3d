@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 02:22:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:54:10 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ typedef struct s_ray
 	float 	ray_dir_y0;
 	float 	ray_dir_y1;
 	int 	position;
-	float   pos_z;
-	float   row_distance;
-	float   floor_step_x;
+	float	pos_z;
+	float	row_distance;
+	float	floor_step_x;
 	float   floor_step_y;
 	float   floor_x;
 	float   floor_y;
@@ -102,6 +102,8 @@ typedef struct s_texture
 	char	*south;
 	char	*west;
 	char	*east;
+	char	*sky;
+	char	*floor;
 	int		floor[3];
 	int		f_rgb;
 	int		sky[3];
@@ -158,6 +160,8 @@ typedef struct s_game
 	t_img		north;
 	t_img		south;
 	t_img		west;
+	t_img		sky;
+	t_img		floor;
 	t_img		east;
 	t_ray		ray;
 }	t_game;
