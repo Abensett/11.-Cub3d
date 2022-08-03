@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/03 17:00:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:01:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	my_mlx_pixel_get(t_img *image, int x, int y, int *color)
 	*color = *(unsigned int*)dst;
 }
 
-static void	ft_draw_heart(t_game *game, int hp)
+void	ft_draw_heart(t_game *game, int hp)
 {
 	int	trgb;
 	int	i;
