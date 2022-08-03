@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/03 17:04:43 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:05:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,9 @@ void	raycasting(t_game *game)
 		verline(game, x++, 0);
 	}
 	draw_mini_map(game, 0);
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-		game->gun.img, 0, 0);
+	
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
+		game->gun.img, 0, 0);
 }
