@@ -6,13 +6,13 @@
 #    By: abensett <abensett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/03 19:20:13 by flee              #+#    #+#              #
-#    Updated: 2022/08/03 16:36:25 by abensett         ###   ########.fr        #
+#    Updated: 2022/08/03 16:58:38 by abensett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= Cub3d
 
-SRCS= main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c drawsky.c \
+SRCS= main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c draw_sky.c \
 		game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c \
 		life_bar.c
 
