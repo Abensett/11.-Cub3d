@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:08:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/03 17:13:17 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:16:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	parse_map(game);
 	square_map(game);
 	parse_wall(game);
-	system("afplay img/night.mp3 &>/dev/null &");
+	system("afplay img/bonus_sounds_night.mp3 &>/dev/null &");
 	game_loop(game);
 	return (0);
 }
