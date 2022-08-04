@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 19:01:47 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:18:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,9 @@ void			rotate_left(t_game *game);
 int				input(int key, t_game *game);
 bool			check_move(t_game *game, float tmp_x, float tmp_y);
 
+
 void			draw_mini_map(t_game *game, int color);
 void			draw_sky(t_game *game, int y);
+int				apply_shadow(game->ray.perp_wall_dist, int color);
 void			ft_draw_heart(t_game *game, int hp);
 #endif
