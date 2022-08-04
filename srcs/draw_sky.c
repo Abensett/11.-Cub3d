@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:42:00 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/04 19:00:22 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:01:02 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int*	apply_shadow(double dist, int *color)
 
 	transparency = (int)fmin(((*color >> 24) + 0.1) * (dist * 600), 255);
 	*color = (transparency << 24 | *color);
-	return (*color)
+	return (*color);
 }
 
 void	draw_sky_2(t_game *game, int y)
