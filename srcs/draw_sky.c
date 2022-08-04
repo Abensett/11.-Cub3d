@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:42:00 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/04 19:08:21 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:08:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	draw_sky_2(t_game *game, int y)
 		
 		my_mlx_pixel_put(&game->windows, x, y,
 			apply_shadow(game->ray.perp_wall_dist ,
-			img_pix_get(&game->sky, game->ray.tex_x, game->ray.tex_y)));
+			&img_pix_get(&game->sky, game->ray.tex_x, game->ray.tex_y)));
 		my_mlx_pixel_put(&game->windows, x, WINDOWS_Y - y - 1,
 		apply_shadow(game->ray.perp_wall_dist ,
-		 img_pix_get(&game->floor, game->ray.tex_x,
+		 &img_pix_get(&game->floor, game->ray.tex_x,
 			 game->ray.tex_y)));
 		x++;
 	}
