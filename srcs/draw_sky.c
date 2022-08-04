@@ -6,11 +6,20 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:42:00 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/01 10:46:53 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:00:22 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
+
+int*	apply_shadow(double dist, int *color)
+{
+	int transparency;
+
+	transparency = (int)fmin(((*color >> 24) + 0.1) * (dist * 600), 255);
+	*color = (transparency << 24 | *color);
+	return (*color)
+}
 
 void	draw_sky_2(t_game *game, int y)
 {
@@ -27,10 +36,13 @@ void	draw_sky_2(t_game *game, int y)
 					- game->ray.cell_y)) & (TEX_SIZE - 1);
 		game->ray.floor_x += game->ray.floor_step_x;
 		game->ray.floor_y += game->ray.floor_step_y;
+		
 		my_mlx_pixel_put(&game->windows, x, y,
 			img_pix_get(&game->sky, game->ray.tex_x, game->ray.tex_y));
 		my_mlx_pixel_put(&game->windows, x, WINDOWS_Y - y - 1,
-			img_pix_get(&game->floor, game->ray.tex_x, game->ray.tex_y));
+		apply_shadow(game->ray.perp_wall_dist ,
+		 img_pix_get(&game->floor, game->ray.tex_x,
+			 game->ray.tex_y)));
 		x++;
 	}
 }
