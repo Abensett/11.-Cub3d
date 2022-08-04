@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:42:00 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/04 19:33:19 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:40:46 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		apply_shadow(double dist, int color)
 	int transparency;
 	int new_color;
 	
-	transparency = (int)fmin(((color >> 24) + 0.1) * (dist * 600), 255);
+	transparency = (int)fmin(((color >> 24) + 0.2) * (dist * 600), 255);
 	new_color = (transparency << 24 | color);
 	return (new_color);
 }
