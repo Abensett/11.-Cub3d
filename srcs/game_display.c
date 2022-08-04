@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/03 15:54:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 16:09:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	put_tex(t_game *game, int x)
 void	verline(t_game *game, int x, int sky)
 {
 	int		cursor;
-	
+
 	cursor = 0;
 	while (cursor < 20)
 		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2 - 10 + cursor++,

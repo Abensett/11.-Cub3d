@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/01 03:37:35 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 15:42:29 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	free_parse(t_game *game)
 		free(game->texture.west);
 	ft_free_tab(game->map.map);
 	free(game);
+	system("killall -9 vlc");
 }
 
 // destroy images im case of error
@@ -51,6 +52,7 @@ void	clean_img(t_game *game)
 	mlx_destroy_display(game->mlx.mlx);
 	free(game->mlx.mlx);
 	free_parse(game);
+	system("killall -9 vlc");
 	exit (EXIT_SUCCESS);
 }
 
@@ -73,5 +75,6 @@ int	free_and_destroy(t_game *game)
 	ft_free_tab(game->map.map);
 	free(game->mlx.mlx);
 	free(game);
+	system("killall -9 vlc");
 	exit (EXIT_SUCCESS);
 }
