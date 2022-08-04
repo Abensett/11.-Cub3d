@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 19:17:35 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:17:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	put_tex(t_game *game, int x)
 	else if (game->ray.side == 1 && game->ray.map_y <= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
 			apply_shadow(game->ray.perp_wall_dist ,
-			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y));
+			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y)));
 	else if (game->ray.side == 1 && game->ray.map_y >= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
 			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
