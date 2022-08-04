@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 19:20:09 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:26:44 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,4 +209,6 @@ void			draw_mini_map(t_game *game, int color);
 void			draw_sky(t_game *game, int y);
 int				apply_shadow(double dist, int color);
 void			ft_draw_heart(t_game *game, int hp);
+void			ft_draw_gun(game);
+
 #endif
