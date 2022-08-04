@@ -6,21 +6,21 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:42:00 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/04 19:07:13 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:08:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
 
-int		apply_shadow(double dist, int color)
+int		apply_shadow(double dist, int *color)
 {
 	int transparency;
 
-	printf("%d 1\n",color);
-	transparency = (int)fmin(((color >> 24) + 0.1) * (dist * 600), 255);
-	color = (transparency << 24 | color);
-	printf("%d 2\n",color);
-	return (color);
+	printf("%d 1\n", color);
+	transparency = (int)fmin(((*color >> 24) + 0.1) * (dist * 600), 255);
+	*color = (transparency << 24 | *color);
+	printf("%d 2\n", color);
+	return (*color);
 }
 
 void	draw_sky_2(t_game *game, int y)
