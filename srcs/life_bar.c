@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 17:25:45 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:26:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	ft_draw_heart(t_game *game, int hp)
 	x = game->ray.ray_dir_x - (hp * (game->ray.ray_dir_x / 14));
 	if (game->ray.ray_dir_x <= 8 || game->ray.ray_dir_y <= 8)
 		return ;
-	while (++i < (game->ray.ray_dir_x / 180) * (100))
+	while (++i < 100)
 	{
 		j = -1;
 		x += 1;
 		y = game->ray.ray_dir_y / 34;
-		while (++j < (game->ray.ray_dir_y / 101) * (100))
+		while (++j < 100)
 		{
 			my_mlx_pixel_get(game->lifebar.img, i ,
 								j , &trgb);
