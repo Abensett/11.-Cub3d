@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 21:27:09 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:30:16 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ typedef struct s_game
 	int	 		life;
 	float		speed;
 	int 		gun_shift;
-	t_bool		gun_dir;
+	int 		gun_dir;
 	t_mlx		mlx;
 	t_map		map;
 	t_texture	texture;
