@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 22:10:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 22:11:07 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_gun(t_game *game, int shooting)
 		{
 			color = get_tex_color(game->gun,
 				(i),
-				(j), 1));
+				(j), 1);
 			if (color != 0)
 				my_mlx_pixel_put(&game->windows, i, j + game->gun_shift, color);
 			j++;
