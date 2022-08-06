@@ -27,8 +27,8 @@ void	move_up(t_game *game)
 	else
 	{
 		game->life -= 10;
-		game->player.pos_x -= game->player.dir_y * 0.12;
-		game->player.pos_y -= game->player.dir_x * 0.12;
+		game->player.pos_x -= game->player.dir_x * 0.12;
+		game->player.pos_y -= game->player.dir_y * 0.12;
 	}
 }
 

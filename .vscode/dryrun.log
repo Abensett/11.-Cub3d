@@ -1,7 +1,6 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/abou/Desktop/CUB3DD'
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/main.c -o srcs/main.o
- 
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/get_file.c -o srcs/get_file.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/parse.c -o srcs/parse.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/square_map.c -o srcs/square_map.o
@@ -18,7 +17,6 @@ clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/parse_map.c 
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/game_utils.c -o srcs/game_utils.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/game_utils2.c -o srcs/game_utils2.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/clean.c -o srcs/clean.o
- 
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/life_bar.c -o srcs/life_bar.o
 make -C libft
 make -C mlx
