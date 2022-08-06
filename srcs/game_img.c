@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/03 16:58:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:37:35 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	open_img(t_game *game)
 	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
 	game->gun.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/gun.xpm", &game->floor.byte_p, &game->gun.line_l);
+			"./img/gun.xpm", &game->floor.width, &game->gun.height);
 	game->lifebar.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/lifebar.xpm", &game->lifebar.byte_p, &game->lifebar.line_l);
+			"./img/lifebar.xpm", &game->lifebar.width, &game->lifebar.height);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);
