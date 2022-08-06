@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 17:36:54 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:41:51 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,19 @@ void	my_mlx_pixel_get(t_img *image, int x, int y, int *color)
 	*color = *(unsigned int*)dst;
 }
 
-void	ft_life_bar(t_game *game, int offset_x, int offset_y, int width)
+void	ft_life_bar(t_game *game, int width)
 {
 	int		i;
 	int		j;
 	int		color;
 
-	if (offset_x < 0)
-		offset_x = WINDOWS_X + offset_x - width;
-	if (offset_y < 0)
-		offset_y = WINDOWS_Y + offset_y - width / 10;
-	j = offset_y;
-	while (j < offset_y + width / 10)
+	j = WINDOWS_Y - 200;
+	while (j < WINDOWS_Y - 100)
 	{
-		i = offset_x;
-		while (i < offset_x + width)
+		i = WINDOWS_X - 200;
+		while (i < WINDOWS_X -100)
 		{
-			color = (i - offset_x < 5 * (width / 100))
+			color = (i - WINDOWS_X - 200 < 5 * (100 / 100))
 				? 0x9F0000 : 0xFFFFFF;
 			my_mlx_pixel_put(&game->windows, i++, j, color);
 		}

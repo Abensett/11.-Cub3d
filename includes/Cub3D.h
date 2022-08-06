@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 17:33:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:39:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ typedef struct s_img
 
 typedef struct s_game
 {
+	int	 		life;
 	t_mlx		mlx;
 	t_map		map;
 	t_texture	texture;
