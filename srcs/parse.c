@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 17:45:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 18:04:08 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	player_dir(t_game *game, char dir)
 		game->player.plane_y = -0.66;
 	}
 	player_dir2(game, dir);
+	game->life = 100;
 }
 
 /* check if the character is there */
