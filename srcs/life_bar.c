@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 21:55:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:57:16 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,15 @@ void	ft_gun(t_game *game, int shooting)
 	int		j;
 	int		color;
 
-	i = 0.4 * WINDOWS_Y;
-	while (i < 0.8 * WINDOWS_Y)
+	i = 0.4 * WINDOWS_X;
+	while (i < 0.8 * WINDOWS_X)
 	{
-		j = 0.6 *  WINDOWS_X;
-		while (j + game->gun_shift <  WINDOWS_X)
+		j = 0.6 *  WINDOWS_Y;
+		while (j + game->gun_shift <  WINDOWS_Y)
 		{
 			color = get_tex_color(game->gun,
-				((i - 0.4 * WINDOWS_Y) / (0.4 * WINDOWS_Y)),
-				((j - 0.6 *  WINDOWS_X) / (0.4 * WINDOWS_X)), 1);
+				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
+				((j - 0.6 *  WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
 			printf("color : %d\n", color);
 			if (color != 0)
 				my_mlx_pixel_put(&game->windows, i, j + game->gun_shift, color);
@@ -94,7 +94,7 @@ void	ft_gun(t_game *game, int shooting)
 	game->gun_shift = game->gun_shift + (game->gun_dir ? -5 : 5);
 	if (game->gun_shift < 0)
 		game->gun_dir = 0;
-	else if (game->gun_shift > 0.05 * WINDOWS_X)
+	else if (game->gun_shift > 0.05 * WINDOWS_Y)
 		game->gun_dir = 1;
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
 	shooting++;
