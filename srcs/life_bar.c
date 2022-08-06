@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 17:35:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:36:28 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_life_bar(t_game *game, int offset_x, int offset_y, int width)
 	int		color;
 
 	if (offset_x < 0)
-		offset_x = WINDOWS_Y + offset_x - width;
+		offset_x = WINDOWS_X + offset_x - width;
 	if (offset_y < 0)
-		offset_y = WINDOWS_X + offset_y - width / 10;
+		offset_y = WINDOWS_Y + offset_y - width / 10;
 	j = offset_y;
 	while (j < offset_y + width / 10)
 	{
