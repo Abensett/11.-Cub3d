@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 21:31:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:31:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,5 @@ void	ft_gun(t_game *game, int shooting)
 	else if (game->gun_shift > 0.05 *WINDOWS_Y)
 		game->gun_dir = 1;
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
-	shooting(* void);
+	(*void)shooting;
 }
