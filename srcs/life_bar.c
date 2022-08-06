@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 21:50:34 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:51:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 	darken = (darken > 1) ? 1 : darken;
 	darken = (darken < 0.4) ? 0.4 : darken;
 	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
-		+ (int)(u * tex.witdh) * (tex.byte_p >> 3);
+		+ (int)(u * tex.width) * (tex.byte_p >> 3);
 	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
