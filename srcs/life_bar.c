@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 17:51:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:51:50 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_life_bar(t_game *game)
 		i = WINDOWS_X - 400;
 		while (i < WINDOWS_X - 100)
 		{
-			color = (i - WINDOWS_X + 400 + 50 < 0)
+			color = (i - WINDOWS_X + 400  < 0)
 				? 0x9F0000 : 0xFFFFFF;
 			my_mlx_pixel_put(&game->windows, i++, j, color);
 		}
