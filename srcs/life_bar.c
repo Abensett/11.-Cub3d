@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 21:32:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:47:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ void	write_text(t_game *game, int pos[2], char *text, int color)
 	mlx_string_put(game->mlx.mlx, game->mlx.windows, x, y, color, text);
 }
 
+int 	load_texture(t_game *game, t_img *texture, char *filename)
+{
+	if (!(texture->img = mlx_xpm_file_to_image(game->mlx.mlx,
+		filename, &texture->width, &texture->height)))
+		return (0);
+	if (!(texture->addr = mlx_get_data_addr(texture->img, &texture->byte_p,
+		&texture->line_l, &texture->end)))
+		return (0);
+	return (1);
+}
 int		get_tex_color(t_img tex, double u, double v, double darken)
 {
 	char			*ptr;
@@ -31,8 +41,8 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 
 	darken = (darken > 1) ? 1 : darken;
 	darken = (darken < 0.4) ? 0.4 : darken;
-	ptr = tex.addr + (int)(v * tex.byte_p) * tex.line_l
-		+ (int)(u * tex.byte_p) * (tex.byte_p >> 3);
+	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
+		+ (int)(u * tex.width) * (tex.byte_p >> 3);
 	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
