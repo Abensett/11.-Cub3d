@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 17:26:26 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:32:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,26 @@ void	my_mlx_pixel_get(t_img *image, int x, int y, int *color)
 	*color = *(unsigned int*)dst;
 }
 
-void	ft_draw_heart(t_game *game, int hp)
+void	ft_draw_heart(t_game *game, int offset_x, int offset_y, int width)
 {
-	int	trgb;
-	int	i;
-	int	j;
-	int	x;
-	int	y;
+	int		i;
+	int		j;
+	int		color;
 
-	i = -1;
-	x = game->ray.ray_dir_x - (hp * (game->ray.ray_dir_x / 14));
-	if (game->ray.ray_dir_x <= 8 || game->ray.ray_dir_y <= 8)
-		return ;
-	while (++i < 100)
+	if (offset_x < 0)
+		offset_x = WINDOWS_Y + offset_x - width;
+	if (offset_y < 0)
+		offset_y = WINDOWS_X + offset_y - width / 10;
+	j = offset_y;
+	while (j < offset_y + width / 10)
 	{
-		j = -1;
-		x += 1;
-		y = game->ray.ray_dir_y / 34;
-		while (++j < 100)
+		i = offset_x;
+		while (i < offset_x + width)
 		{
-			my_mlx_pixel_get(game->lifebar.img, i ,
-								j , &trgb);
-			if ((trgb & 0x00FFFFFF) != 0)
-				my_mlx_pixel_put(&game->windows, x, y, trgb);
-			y++;
+			color = (i - offset_x < 5 * (width / 100))
+				? 0x9F0000 : 0xFFFFFF;
+			my_mlx_pixel_put(game->img, i, j, color);
 		}
+		j++;
 	}
 }
