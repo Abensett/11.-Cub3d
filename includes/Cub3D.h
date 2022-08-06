@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 21:24:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:27:09 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <math.h>
 # include "libft.h"
 # include "mlx.h"
+# include <stdbool.h>
 
 # define WINDOWS_X 	1500
 # define WINDOWS_Y 	1000
