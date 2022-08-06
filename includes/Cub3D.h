@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 18:16:20 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:24:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,8 @@ typedef struct s_game
 {
 	int	 		life;
 	float		speed;
+	int 		gun_shift;
+	t_bool		gun_dir;
 	t_mlx		mlx;
 	t_map		map;
 	t_texture	texture;
@@ -212,5 +214,7 @@ void			draw_sky(t_game *game, int y);
 int				apply_shadow(double dist, int color);
 void			ft_life_bar(t_game *game);
 // void			ft_draw_gun(t_game *game);
+void			write_text(t_game *game, int pos[2], char *text, int color);
+
 
 #endif
