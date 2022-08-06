@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 22:22:51 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 22:23:17 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
 	// printf("%d %d %d\n", r, g, b);
-	// printf("%d %s %d\n", tex.byte_p, *tex.addr,  tex.line_l);
+	printf("%d %s %d\n", tex.byte_p, *tex.addr,  tex.line_l);
 	return ((r << 16) + (g << 8) + b);
 }
 
@@ -83,7 +83,7 @@ void	ft_gun(t_game *game, int shooting)
 		j = 0.6 *  WINDOWS_Y;
 		while (j + game->gun_shift <  WINDOWS_Y)
 		{
-			color = img_pix_get(&game->lifebar,
+			color = img_pix_get(game->lifebar,
 				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 				((j - 0.6 *  WINDOWS_Y) / (0.4 * WINDOWS_Y)));
 			if (color != 0)
