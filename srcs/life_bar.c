@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 22:05:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 22:09:16 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
+	printf("%d %d %d\n", r, g, b);
 	return ((r << 16) + (g << 8) + b);
 }
 
