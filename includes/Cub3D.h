@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 21:55:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 22:05:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,8 +147,8 @@ typedef struct s_img
 	int		byte_p;
 	int		line_l;
 	int		end;
-	int			width;
-	int			height;
+	int		width;
+	int		height;
 }	t_img;
 
 typedef struct s_game
