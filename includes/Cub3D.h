@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 17:39:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:42:16 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ bool			check_move(t_game *game, float tmp_x, float tmp_y);
 void			draw_mini_map(t_game *game, int color);
 void			draw_sky(t_game *game, int y);
 int				apply_shadow(double dist, int color);
-void	ft_life_bar(t_game *game, int offset_x, int offset_y, int width);
+void			ft_life_bar(t_game *game, int width);
 // void			ft_draw_gun(t_game *game);
 
 #endif
