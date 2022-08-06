@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 21:47:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:50:34 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 	darken = (darken > 1) ? 1 : darken;
 	darken = (darken < 0.4) ? 0.4 : darken;
 	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
-		+ (int)(u * tex.width) * (tex.byte_p >> 3);
+		+ (int)(u * tex.witdh) * (tex.byte_p >> 3);
 	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
@@ -75,15 +75,15 @@ void	ft_gun(t_game *game, int shooting)
 	int		j;
 	int		color;
 
-	i = 0.4 * WINDOWS_X;
-	while (i < 0.8 * WINDOWS_X)
+	i = 0.4 * WINDOWS_Y;
+	while (i < 0.8 * WINDOWS_Y)
 	{
-		j = 0.6 * WINDOWS_Y;
-		while (j + game->gun_shift < WINDOWS_Y)
+		j = 0.6 *  WINDOWS_X;
+		while (j + game->gun_shift <  WINDOWS_X)
 		{
 			color = get_tex_color(game->gun,
-				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
-				((j - 0.6 * WINDOWS_Y) / (0.4 *WINDOWS_Y)), 1);
+				((i - 0.4 * WINDOWS_Y) / (0.4 * WINDOWS_Y)),
+				((j - 0.6 *  WINDOWS_X) / (0.4 * WINDOWS_X)), 1);
 			if (color != 0)
 				my_mlx_pixel_put(&game->windows, i, j + game->gun_shift, color);
 			j++;
@@ -93,7 +93,7 @@ void	ft_gun(t_game *game, int shooting)
 	game->gun_shift = game->gun_shift + (game->gun_dir ? -5 : 5);
 	if (game->gun_shift < 0)
 		game->gun_dir = 0;
-	else if (game->gun_shift > 0.05 *WINDOWS_Y)
+	else if (game->gun_shift > 0.05 * WINDOWS_X)
 		game->gun_dir = 1;
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
 	shooting++;
