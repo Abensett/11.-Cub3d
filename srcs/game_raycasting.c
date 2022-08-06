@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 19:57:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:57:22 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,5 @@ void	raycasting(t_game *game)
 	// ft_draw_gun(game);
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-		game->gun.img, 0, 0);
+
 }
