@@ -61,8 +61,8 @@ void	move_left(t_game *game)
 	else
 	{
 		game->life -= 10;
-		game->player.pos_x += game->player.dir_y * 0.02;
-		game->player.pos_y -= game->player.dir_x * 0.02;
+		game->player.pos_x += game->player.dir_y * 0.06;
+		game->player.pos_y -= game->player.dir_x * 0.06;
 	}
 }
 
