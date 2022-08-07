@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 21:51:29 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:54:54 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ int	input(int key, t_game *game)
 	else if (key == 65363)
 		rotate_right(game);
 	else if (key == 32)
+	{
+		system("cvlc img/gun_shot.mp3 &>/dev/null &");
 		game->shotornot = 1;
+	}
 	printf("Keypress: %d\n", key);
 	return (0);
 }
