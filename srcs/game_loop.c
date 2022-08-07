@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 22:41:32 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 22:42:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 	x++;
 	y++;
 	game->shotornot = 0;
-	
+	return (0);
 }
 /* **************************************************************************
 open_img -> open texture files
