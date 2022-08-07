@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 23:20:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:21:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	input(int key, t_game *game)
 		usleep(500);
 		game->shotornot = 1;
 	}
-	if (key == 65506)
+	if (key == 65505)
 		game->speed = 0.3;
 
 	printf("Keypress: %d\n", key);
@@ -64,5 +64,7 @@ int	exput(int key, t_game *game)
 {
 	if (key == 32)
 		game->shotornot = 0;
+	if (key == 65505)
+		game->speed = 0.12;
 	return (0);
 }
