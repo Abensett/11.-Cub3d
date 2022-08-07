@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:07:22 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:09:10 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ int	ft_handle_shoot(int button, int x, int y, t_game *game)
 {
 	if (button == 1 && game->shotornot == 0)
 	{
-		 game->shotornot = 1;
-		sleep(10);
+	 	game->shotornot = 1;
+		fork();
+		sleep(100);
 	}	
 	game->shotornot = 0;
 	x++;
