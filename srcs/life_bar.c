@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:44:20 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:44:34 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_life_bar(t_game *game)
 			color = (i - WINDOWS_X + 400 - game->life * 3 < 0)
 				? 0x9F0000 : 0xFFFFFF;
 			if (game->life < 30)
-				if (color == 0x9F0000)
+				if (color == 0xFFFFFF)
 					color = 0xFF0000;
 			my_mlx_pixel_put(&game->windows, i++, j, color);
 		}
