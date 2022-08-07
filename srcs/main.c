@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:08:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 15:41:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:25:02 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	parse_map(game);
 	square_map(game);
 	parse_wall(game);
-	system("cvlc --loop img/bonus_sounds_background.mp3 &>/dev/null &");
+	system("cvlc --loop img/epic.mp3 &>/dev/null &");
 	game_loop(game);
 	return (0);
 }
