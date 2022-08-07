@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 19:50:57 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:52:53 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_life_bar(t_game *game)
 	}
 }
 
-void	ft_gun(t_game *game, int shotornot)
+void	ft_gun(t_game *game)
 {
 	int		i;
 	int		j;
@@ -81,7 +81,7 @@ void	ft_gun(t_game *game, int shotornot)
 		j = 0.6 *  WINDOWS_Y;
 		while (j + game->gun_shift <  WINDOWS_Y)
 		{
-			color = get_tex_color(game->gun[shotornot],
+			color = get_tex_color(game->gun[game->shotornot],
 				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 				((j - 0.6 *  WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
 			if (color != 0)
@@ -96,5 +96,4 @@ void	ft_gun(t_game *game, int shotornot)
 	else if (game->gun_shift > 0.05 * WINDOWS_Y)
 		game->gun_dir = 1;
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
-	shotornot++;
 }
