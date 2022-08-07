@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:09:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:11:45 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,17 @@ int	color_get(t_img *img, int x, int y)
 
 int	ft_handle_shoot(int button, int x, int y, t_game *game)
 {
+	int pid;
 	if (button == 1 && game->shotornot == 0)
 	{
 	 	game->shotornot = 1;
-		fork();
-		sleep(100);
+		pid = fork();
+		if (pid == 0)
+		{
+			sleep(100);
+			game->shotornot = 0;
+		}
 	}	
-	game->shotornot = 0;
 	x++;
 	y++;
 	return (0);
