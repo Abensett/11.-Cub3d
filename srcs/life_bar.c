@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:35:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:44:08 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ int		my_tex_color(t_img tex, double u, double v, double shadow)
 	return ((r << 16) + (g << 8) + b);
 }
 
+
+
+
+
+
+
+
+
+
 void	ft_life_bar(t_game *game)
 {
 	int		i;
@@ -56,14 +65,12 @@ void	ft_life_bar(t_game *game)
 		{
 			color = (i - WINDOWS_X + 400 - game->life * 3 < 0)
 				? 0x9F0000 : 0xFFFFFF;
+			if (game->life < 30)
+				if (color = 0x9F0000)
+					color = 0xFF0000;
 			my_mlx_pixel_put(&game->windows, i++, j, color);
 		}
 		j++;
-	}
-	if (game->life <= 30)
-	{
-		printf("%d\n", game->life);
-		write_on_screen(game, "You are dying", position, 0x000000);
 	}
 }
 
