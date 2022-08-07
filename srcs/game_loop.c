@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 21:57:42 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 22:38:30 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ int	ft_handle_shoot(int button, int x, int y, t_game *game)
 	y++;
 	return (0);
 }
+void	ft_handle_mouse(int button, int x, int y, t_game *game)
+{
+	button++;
+	x++;
+	y++;
+	game->shotornot = 0;
+	
+}
 /* **************************************************************************
 open_img -> open texture files
 hooks ->(window, number = event, mask = key pressed or not etc, fcn, param)
@@ -55,6 +63,6 @@ void	game_loop(t_game *game)
 	mlx_hook(game->mlx.windows, 2, 1L << 0, input, game);
 	mlx_hook(game->mlx.windows, 3, 1L << 1, input, game);
 	mlx_hook(game->mlx.windows, 33, 1l << 5, free_and_destroy, game);
-	mlx_mouse_hook(game->mlx.windows, &ft_handle_shoot, game);
+	mlx_mouse_hook(game->mlx.windows, &ft_handle_mouse, game);
 	mlx_loop(game->mlx.mlx);
 }
