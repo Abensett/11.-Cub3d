@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:52:21 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:47:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ void			draw_sky(t_game *game, int y);
 int				apply_shadow(double dist, int color);
 void			ft_life_bar(t_game *game);
 void			ft_gun(t_game *game);
+int				ft_handle_shoot(t_game *game);
 void			write_text(t_game *game, int pos[2], char *text, int color);
 
 
