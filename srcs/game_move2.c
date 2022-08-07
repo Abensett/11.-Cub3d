@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 19:53:26 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:07:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ int	input(int key, t_game *game)
 		rotate_left(game);
 	else if (key == 65363)
 		rotate_right(game);
-	else if (key == 65362)
 	return (0);
 }
