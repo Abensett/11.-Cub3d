@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 19:52:53 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:19:17 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ void	ft_gun(t_game *game)
 	int		j;
 	int		color;
 
+	if(game->shotornot == 1)
+	{
+		wait(10);
+		game->shotornot = 0;
+	}
 	i = 0.4 * WINDOWS_X;
 	while (i < 0.8 * WINDOWS_X)
 	{
