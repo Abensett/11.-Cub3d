@@ -27,8 +27,8 @@ void	move_up(t_game *game)
 	else
 	{
 		game->life -= 5;
-		game->player.pos_x -= game->player.dir_x * 0.12;
-		game->player.pos_y -= game->player.dir_y * 0.12;
+		game->player.pos_x -= game->player.dir_x * game->speed;
+		game->player.pos_y -= game->player.dir_y * game->speed;
 	}
 }
 
@@ -47,8 +47,8 @@ void	move_right(t_game *game)
 	else
 	{
 		game->life -= 5;
-		game->player.pos_x -= game->player.dir_y * 0.12;
-		game->player.pos_y += game->player.dir_x * 0.12;
+		game->player.pos_x -= game->player.dir_y * game->speed;
+		game->player.pos_y += game->player.dir_x * game->speed;
 	}
 }
 
@@ -67,8 +67,8 @@ void	move_left(t_game *game)
 	else
 	{
 		game->life -= 5;
-		game->player.pos_x += game->player.dir_y * 0.12;
-		game->player.pos_y -= game->player.dir_x * 0.12;
+		game->player.pos_x += game->player.dir_y * game->speed;
+		game->player.pos_y -= game->player.dir_x * game->speed;
 	}
 }
 
@@ -87,8 +87,8 @@ void	move_down(t_game *game)
 	else
 	{
 		game->life -= 5;
-		game->player.pos_x += game->player.dir_x * 0.12;
-		game->player.pos_y += game->player.dir_y * 0.12;
+		game->player.pos_x += game->player.dir_x * game->speed;
+		game->player.pos_y += game->player.dir_y * game->speed;
 	}
 }
 
