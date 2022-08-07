@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:55:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:56:53 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	player_dir(t_game *game, char dir)
 	game->speed = 0.02;
 	game->gun_shift = 0;
 	game->gun_dir = 0;
+	game->shotornot = 0;
 }
 
 /* check if the character is there */
