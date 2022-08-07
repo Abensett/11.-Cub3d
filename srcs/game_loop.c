@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 22:34:36 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:45:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int	color_get(t_img *img, int x, int y)
 
 /* **************************************************************************
 open_img -> open texture files
-hooks ->
-
+hooks ->(window, number = event, mask = key pressed or not etc, fcn, param)
+		 1L<<0 key pressed
+		1L<<2 key released
+		1L<<5 Leave window
 *****************************************************************************/
 void	game_loop(t_game *game)
 {

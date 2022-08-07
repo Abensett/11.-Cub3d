@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/06 22:45:43 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:47:47 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void	img_addr(t_game *game)
 			&game->sky.byte_p, &game->sky.line_l, &game->sky.end);
 	game->lifebar.addr = mlx_get_data_addr(game->lifebar.img,
 			&game->lifebar.byte_p, &game->lifebar.line_l, &game->lifebar.end);
-	game->gun.addr = mlx_get_data_addr(game->gun.img,
-			&game->gun.byte_p, &game->gun.line_l, &game->gun.end);
+	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
+			&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
+	game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
+			&game->gun[1].byte_p, &game->gun[1].line_l, &game->gun[1].end);
 	game->windows.addr = mlx_get_data_addr(game->windows.img,
 			&game->windows.byte_p, &game->windows.line_l, &game->windows.end);
 }
@@ -61,10 +63,12 @@ void	open_img(t_game *game)
 			game->texture.skys, &game->sky.byte_p, &game->sky.line_l);
 	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
-	game->gun.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/gun.xpm", &game->floor.width, &game->gun.height);
+	game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
+			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
+	game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
+			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
 	game->lifebar.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/gun.xpm", &game->lifebar.width, &game->lifebar.height);
+			"./img/lifebar.xpm", &game->lifebar.width, &game->lifebar.height);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);

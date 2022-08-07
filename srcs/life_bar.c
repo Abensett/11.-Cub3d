@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/06 22:39:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:50:57 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int		get_tex_color(t_img tex, double u, double v, double darken)
 	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
 	g = darken * (unsigned char)(*(ptr + 1));
 	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
-	// printf("%d %d %d\n", r, g, b);
-	// printf("%d %s %d\n", tex.byte_p, *tex.addr,  tex.line_l);
 	return ((r << 16) + (g << 8) + b);
 }
 
@@ -71,7 +69,7 @@ void	ft_life_bar(t_game *game)
 	}
 }
 
-void	ft_gun(t_game *game, int shooting)
+void	ft_gun(t_game *game, int shotornot)
 {
 	int		i;
 	int		j;
@@ -83,10 +81,9 @@ void	ft_gun(t_game *game, int shooting)
 		j = 0.6 *  WINDOWS_Y;
 		while (j + game->gun_shift <  WINDOWS_Y)
 		{
-			color = get_tex_color(game->lifebar,
+			color = get_tex_color(game->gun[shotornot],
 				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 				((j - 0.6 *  WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
-			printf("%d \n", color);
 			if (color != 0)
 				my_mlx_pixel_put(&game->windows, i, j + game->gun_shift, color);
 			j++;
@@ -99,5 +96,5 @@ void	ft_gun(t_game *game, int shooting)
 	else if (game->gun_shift > 0.05 * WINDOWS_Y)
 		game->gun_dir = 1;
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
-	shooting++;
+	shotornot++;
 }
