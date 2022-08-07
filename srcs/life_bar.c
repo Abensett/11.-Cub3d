@@ -6,21 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:03:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:12:54 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
-
-void	write_text(t_game *game, int pos[2], char *text, int color)
-{
-	int		x;
-	int		y;
-
-	x = pos[0] - ft_strlen(text) * 5;
-	y = pos[1];
-	mlx_string_put(game->mlx.mlx, game->mlx.windows, x, y, color, text);
-}
 
 int 	load_texture(t_game *game, t_img *texture, char *filename)
 {
@@ -32,20 +22,20 @@ int 	load_texture(t_game *game, t_img *texture, char *filename)
 		return (0);
 	return (1);
 }
-int		get_tex_color(t_img tex, double u, double v, double darken)
+int		my_tex_color(t_img tex, double u, double v, double shadow)
 {
-	char			*ptr;
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
+	char			*ptr;
 
-	darken = (darken > 1) ? 1 : darken;
-	darken = (darken < 0.4) ? 0.4 : darken;
+	shadow = (shadow > 1) ? 1 : shadow;
+	shadow = (shadow < 0.4) ? 0.4 : shadow;
 	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
 		+ (int)(u * tex.width) * (tex.byte_p >> 3);
-	r = darken * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
-	g = darken * (unsigned char)(*(ptr + 1));
-	b = darken * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
+	r = shadow * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
+	g = shadow * (unsigned char)(*(ptr + 1));
+	b = shadow * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
 	return ((r << 16) + (g << 8) + b);
 }
 
@@ -54,7 +44,10 @@ void	ft_life_bar(t_game *game)
 	int		i;
 	int		j;
 	int		color;
+	int 	position[2];
 
+	position[0] = WINDOWS_X / 2;
+	position[1] = WINDOWS_Y / 2;
 	j = 50;
 	while (j < 75)
 	{
@@ -67,6 +60,8 @@ void	ft_life_bar(t_game *game)
 		}
 		j++;
 	}
+	if (game->life <= 30)
+		write_on_screen(game, "You are dying", position[0], 0xFFFFFF);
 }
 
 void	ft_gun(t_game *game)
@@ -82,7 +77,7 @@ void	ft_gun(t_game *game)
 		j = 0.6 *  WINDOWS_Y;
 		while (j + game->gun_shift <  WINDOWS_Y)
 		{
-			color = get_tex_color(game->gun[game->shotornot],
+			color = my_tex_color(game->gun[game->shotornot],
 				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 				((j - 0.6 *  WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
 			if (color != 0)
