@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/07 20:21:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:22:07 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	ft_gun(t_game *game)
 		game->gun_dir = 1;
 	if(game->shotornot == 1)
 	{
-		sleep(1);
+		sleep(2);
 		game->shotornot = 0;
 	}
 	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
