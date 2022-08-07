@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:08:24 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:13:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "Cub3D.h"
 
 void	write_on_screen(t_game *game, char *text, int pos[2], int color)
 {
