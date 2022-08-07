@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 22:38:30 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 22:39:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ int	color_get(t_img *img, int x, int y)
 	return (ret);
 }
 
-int	ft_handle_shoot(int button, int x, int y, t_game *game)
+int	ft_handle_shoot(t_game *game)
 {
-	if (button == 1 && game->shotornot == 0)
+	if (game->shotornot == 0)
 	{
 	 	game->shotornot = 1;
 	}
-	x++;
-	y++;
 	return (0);
 }
 void	ft_handle_mouse(int button, int x, int y, t_game *game)
