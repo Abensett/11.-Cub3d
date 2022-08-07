@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 22:40:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 22:40:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_handle_shoot(t_game *game)
 	}
 	return (0);
 }
-void	ft_handle_mouse(int button, int x, int y, t_game *game)
+int16_t	ft_handle_mouse(int button, int x, int y, t_game *game)
 {
 	button++;
 	x++;
