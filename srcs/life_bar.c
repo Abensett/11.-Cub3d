@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:13:16 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:28:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ void	ft_life_bar(t_game *game)
 		j++;
 	}
 	if (game->life <= 30)
+	{
+		printf("%d\n", game->life);
 		write_on_screen(game, "You are dying", position, 0xFFFFFF);
+	}
 }
 
 void	ft_gun(t_game *game)
