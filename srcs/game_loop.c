@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:45 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:12:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_handle_shoot(int button, int x, int y, t_game *game)
 		pid = fork();
 		if (pid == 0)
 		{
-			sleep(100);
+			sleep(5);
 			game->shotornot = 0;
 		}
 	}	
