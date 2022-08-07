@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 20:03:44 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:05:45 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	ft_handle_shoot(int button, int x, int y, t_game *game)
 		sleep(10);
 	}	
 	game->shotornot == 0;
+	(void *) x;
+	(void *) y;
 }
 /* **************************************************************************
 open_img -> open texture files
