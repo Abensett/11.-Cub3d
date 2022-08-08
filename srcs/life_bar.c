@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 02:26:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:37:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ int		my_tex_color(t_img tex, double u, double v, double shadow)
 	return ((r << 16) + (g << 8) + b);
 }
 
+
 void	ft_life_bar(t_game *game)
 {
 	int		i;
 	int		j;
 	int		color;
-	int 	position[2];
+	
+	mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 375, 75, 0xFFFFFF, "Attention !");
 
-	position[0] = WINDOWS_X / 2;
-	position[1] = WINDOWS_Y / 2;
 	j = 50;
 	while (j < 75)
 	{
