@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 02:37:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:38:51 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,8 @@ void	raycasting(t_game *game)
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
 	mlx_string_put(game->mlx.mlx, game->mlx.windows, 50, 50, 0xFF0000, "Minimap");
-	mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 375, 75, 0xFFFFFF, "Attention !");
-
+	if (game->life <= 40)
+		mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 375, 50,
+		 0xFFFFFF, "You're about to die !");
 	game->shotornot = 0;
 }
