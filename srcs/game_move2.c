@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:58:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:00:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ void	rotate_left(t_game *game)
 		+ game->player.plane_y * cos(rot_speed);
 }
 
+static void	ft_shoot(t_game *game)
+{
+	system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
+	if (game->bullets >= 0)
+	{ 
+		game->shotornot = 1;
+		game->bullets--;
+	}
+}
 int	input(int key, t_game *game)
 {
 	if (key == 65307)
@@ -49,10 +58,7 @@ int	input(int key, t_game *game)
 		rotate_right(game);
 	else if (key == 32)
 	{
-		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
-		if(game->bullets >= 0)
-			game->shotornot = 1;
-		game->bullets--;
+		ft_shoot(game);
 	}
 	if (key == 65505)
 		game->speed = 0.06;
