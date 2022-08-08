@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 19:36:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:29:29 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ void	put_tex(t_game *game, int x)
 			img_pix_get(&game->north, game->ray.tex_x, game->ray.tex_y));
 	else if (game->ray.side == 0 && game->ray.map_x <= game->player.pos_x)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
-		apply_shadow(game->ray.perp_wall_dist ,
-			img_pix_get(&game->south, game->ray.tex_x, game->ray.tex_y)));
+			apply_shadow(game->ray.perp_wall_dist,
+				img_pix_get(&game->south, game->ray.tex_x, game->ray.tex_y)));
 	else if (game->ray.side == 1 && game->ray.map_y <= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
-			apply_shadow(game->ray.perp_wall_dist ,
-			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y)));
+			apply_shadow(game->ray.perp_wall_dist,
+				img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y)));
 	else if (game->ray.side == 1 && game->ray.map_y >= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
 			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));
@@ -59,11 +59,11 @@ void	verline(t_game *game, int x, int sky)
 	cursor = 0;
 	while (cursor < 20)
 		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2 - 10 + cursor++,
-		 WINDOWS_Y / 2, 0xFF0000);
+			WINDOWS_Y / 2, 0xFF0000);
 	cursor = 0;
 	while (cursor < 20)
-		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2 ,
-		 WINDOWS_Y / 2 - 10 + cursor++, 0xFF0000);
+		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2,
+			WINDOWS_Y / 2 - 10 + cursor++, 0xFF0000);
 	cursor = 0;
 	while (game->ray.draw_start < game->ray.draw_end)
 	{

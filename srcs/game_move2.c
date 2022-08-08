@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 00:27:28 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:32:24 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int	input(int key, t_game *game)
 	}
 	if (key == 65505)
 		game->speed = 0.06;
-
-	printf("Keypress: %d\n", key);
 	return (0);
 }
 
