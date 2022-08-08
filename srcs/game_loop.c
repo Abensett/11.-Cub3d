@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/07 22:46:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:17:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,23 @@ int	ft_handle_shoot(t_game *game)
 {
 	if (game->shotornot == 0)
 	{
-	 	game->shotornot = 1;
+		game->shotornot = 1;
 	}
 	return (0);
 }
+
 int	ft_handle_mouse(int button, int x, int y, t_game *game)
 {
 	button++;
 	x++;
 	y++;
-	game->shotornot = 0;
+	if (game->bullets >= 0)
+	{
+		game->shotornot = 1;
+	}	
 	return (0);
 }
+
 /* **************************************************************************
 open_img -> open texture files
 hooks ->(window, number = event, mask = key pressed or not etc, fcn, param)
