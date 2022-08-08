@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:22:19 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:22:37 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 	
 	x++;
 	y++;
-	if (button == 2)
+	if (button == 3)
 	{
 		if (weapon++ == 0)
 		{
@@ -63,7 +63,6 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 		}
 		printf("OH");
 	}
-	printf("%d\n",button);
 	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
 	&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
 	game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
