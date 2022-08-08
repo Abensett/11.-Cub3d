@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:54:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:56:24 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,10 @@ void	ft_life_bar(t_game *game)
 		j++;
 	}
 }
+
 static void	ft_gun_2(t_game *game)
 {
-	if (game->gun_shift)
+	if (game->gun_dir)
 		game->gun_shift = game->gun_shift - 1;
 	else
 		game->gun_shift = game->gun_shift + 1;
@@ -88,9 +89,10 @@ static void	ft_gun_2(t_game *game)
 		game->gun_dir = 0;
 	else if (game->gun_shift > 0.05 * WINDOWS_Y)
 		game->gun_dir = 1;
-	if (game->gun_shift< 0)
+	if (game->gun_shift < 0)
 		game->gun_shift = 0;
 }
+
 void	ft_gun(t_game *game)
 {
 	int		i;
@@ -112,5 +114,12 @@ void	ft_gun(t_game *game)
 		}
 		i++;
 	}
-	ft_gun_2(game);
+	game->gun_shift = game->gun_shift + (game->gun_dir ? -1 : 1);
+	if (game->shotornot)
+		game->gun_shift = 10;
+	if (game->gun_shift < 0)
+		game->gun_dir = 0;
+	else if (game->gun_shift > 0.05 * WINDOWS_Y)
+		game->gun_dir = 1;
+	game->gun_shift = (game->gun_shift < 0) ? 0 : game->gun_shift;
 }
