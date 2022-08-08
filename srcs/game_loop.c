@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:25:29 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:28:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_handle_shoot(t_game *game)
 	system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
 	if (game->bullets >= 0)
 	{
-		game->shotornot = 1;
+		game->shotornot++;
 		game->bullets--;
 	}
 }
@@ -47,28 +47,15 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 
 	if (button == 3)
 	{
-		mlx_destroy_image(game->mlx.mlx, game->gun[0].img);
-		mlx_destroy_image(game->mlx.mlx, game->gun[1].img);
 		if (weapon++ == 0)
 		{
-			game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/knife.xpm", &game->gun[0].width, &game->gun[0].height);
-			game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/knife_2.xpm", &game->gun[1].width, &game->gun[1].height);
+			game->shotornot = 2;
+		
 		}
 		else
 		{
-			game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
-			game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
-			weapon = 0;
+			
 		}
-		printf("OH");
-		game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
-		&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
-		game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
-		&game->gun[1].byte_p, &game->gun[1].line_l, &game->gun[1].end);
 	}
 	
 	return (0);

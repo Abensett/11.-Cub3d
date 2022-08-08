@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 10:20:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:26:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ typedef struct s_game
 	t_ray		ray;
 	t_img		lifebar;
 	t_img		game_over;
-	t_img		gun[2];
+	t_img		gun[4];
 }	t_game;
 
 void			get_file(char *map, t_game *game);
