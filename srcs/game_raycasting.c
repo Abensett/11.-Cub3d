@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 03:07:01 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 03:09:39 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,12 +138,9 @@ void	raycasting(t_game *game)
 	draw_mini_map(game, 0);
 	ft_life_bar(game);
 	ft_gun(game);
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-		game->windows.img, 0, 0);
+	check_dead_win(game);
 	mlx_string_put(game->mlx.mlx, game->mlx.windows, 50, 50, 0xFF0000, "Minimap");
 	if (game->life <= 40)
 		mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 375, 70,
 		 0xFF00000, "You're about to die !");
-	check_dead_win(game);
-	
 }
