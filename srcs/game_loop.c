@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:23:47 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:24:32 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,12 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 			weapon = 0;
 		}
 		printf("OH");
+		game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
+		&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
+		game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
+		&game->gun[1].byte_p, &game->gun[1].line_l, &game->gun[1].end);
 	}
-	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
-	&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
-	game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
-	&game->gun[1].byte_p, &game->gun[1].line_l, &game->gun[1].end);
+	
 	return (0);
 }
 
