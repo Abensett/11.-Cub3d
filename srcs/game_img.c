@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:30:27 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:34:15 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	img_addr(t_game *game)
 void	check_img(t_game *game)
 {
 	load_texture(game, &game->gun[2], "./img/knife.xpm");
-	load_texture(game, &game->gun[3], "./img/knife_2.xpm");
+	load_texture(game, &game->gun[3], "./img/knife.xpm");
 	if (!game->north.img || !game->east.img)
 		clean_img(game);
 	if (!game->south.img || !game->west.img || !game->windows.img)
