@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:19:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:19:45 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 {
 	static int	weapon = 0;
 	
-	x++ = y++;
+	x++;
+	y++;
 	if (button == 2)
 	{
 		if (weapon++ == 0)
