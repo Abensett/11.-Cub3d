@@ -6,13 +6,12 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:41:24 by flee              #+#    #+#             */
-/*   Updated: 2022/07/26 18:22:16 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:21:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
 
-//  ??
 bool	wall(char **map, int x, int y)
 {
 	if (map[x + 1][y] == ' ' || map[x - 1][y] == ' ' ||

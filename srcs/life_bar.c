@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:57:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:16:56 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	my_tex_color(t_img tex, double u, double v, double shadow)
 		shadow = 1;
 	else if (shadow < 0.4)
 		shadow = 0.4;
-	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
-		+ (int)(u * tex.width) * (tex.byte_p >> 3);
+	ptr = tex.addr + (int)(v * tex.height)*tex.line_l
+		+ (int)(u * tex.width)*(tex.byte_p >> 3);
 	if (tex.end)
 	{
 		r = shadow * (unsigned char)(*ptr);
