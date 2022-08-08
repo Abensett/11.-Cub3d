@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 02:37:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:37:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void	ft_life_bar(t_game *game)
 	int		j;
 	int		color;
 	
-	mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 375, 75, 0xFFFFFF, "Attention !");
-
 	j = 50;
 	while (j < 75)
 	{
