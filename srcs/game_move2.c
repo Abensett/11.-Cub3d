@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:58:19 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:58:58 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	input(int key, t_game *game)
 		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
 		if(game->bullets >= 0)
 			game->shotornot = 1;
+		game->bullets--;
 	}
 	if (key == 65505)
 		game->speed = 0.06;
