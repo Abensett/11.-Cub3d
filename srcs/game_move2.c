@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 10:00:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:00:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,7 @@ int	input(int key, t_game *game)
 	else if (key == 65363)
 		rotate_right(game);
 	else if (key == 32)
-	{
 		ft_shoot(game);
-	}
 	if (key == 65505)
 		game->speed = 0.06;
 	return (0);
