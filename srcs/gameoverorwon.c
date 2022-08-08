@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 03:07:30 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 03:08:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	write_on_screen(t_game *game, char *text, int pos[2], int color)
 void 	check_dead_win(t_game *game)
 {
 	load_texture(game, &game->game_over, "./img/gameover.xpm");
-	if (game->life <= 0)
-		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
+	if(game->life <= 0)
+		while (1)
+			mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->game_over.img, 0, 0);
 }
