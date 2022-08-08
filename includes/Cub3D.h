@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 02:54:09 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:57:40 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,5 +220,6 @@ void			ft_gun(t_game *game);
 int				ft_handle_shoot(t_game *game);
 void			write_on_screen(t_game *game, char *text, int pos[2], int color);
 int 			load_texture(t_game *game, t_img *texture, char *filename);
+void 			check_dead_win(t_game *game);
 
 #endif
