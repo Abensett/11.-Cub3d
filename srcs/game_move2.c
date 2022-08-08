@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:20:28 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 11:31:51 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:37:34 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	input(int key, t_game *game)
 
 int	exput(int key, t_game *game)
 {
-	if (key == 32)
+	if (key == 32 && game->shotornot < 2)
 		game->shotornot--;
 	if (key == 65505)
 		game->speed = 0.02;
