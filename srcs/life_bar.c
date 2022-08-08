@@ -6,36 +6,49 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:33:37 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:42:03 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
 
-int 	load_texture(t_game *game, t_img *texture, char *filename)
+int	load_texture(t_game *game, t_img *texture, char *filename)
 {
-	if (!(texture->img = mlx_xpm_file_to_image(game->mlx.mlx,
-		filename, &texture->width, &texture->height)))
+	texture->img = mlx_xpm_file_to_image(game->mlx.mlx,
+			filename, &texture->width, &texture->height);
+	if (!(texture->img))
 		return (0);
-	if (!(texture->addr = mlx_get_data_addr(texture->img, &texture->byte_p,
-		&texture->line_l, &texture->end)))
+	texture->addr = mlx_get_data_addr(texture->img, &texture->byte_p,
+			&texture->line_l, &texture->end);
+	if (!(texture->addr))
 		return (0);
 	return (1);
 }
-int		my_tex_color(t_img tex, double u, double v, double shadow)
+
+int	my_tex_color(t_img tex, double u, double v, double shadow)
 {
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
 	char			*ptr;
 
-	shadow = (shadow > 1) ? 1 : shadow;
-	shadow = (shadow < 0.4) ? 0.4 : shadow;
+	if (shadow > 1)
+		shadow = 1;
+	else if (shadow < 0.4)
+		shadow = 0.4;
 	ptr = tex.addr + (int)(v * tex.height) * tex.line_l
 		+ (int)(u * tex.width) * (tex.byte_p >> 3);
-	r = shadow * (unsigned char)(tex.end ? *ptr : *(ptr + 2));
+	if (tex.end)
+	{
+		r = shadow * (unsigned char)(*ptr);
+		b = shadow * (unsigned char)(*(ptr + 2));
+	}
+	else
+	{
+		r = shadow * (unsigned char)(*(ptr + 2));
+		b = shadow * (unsigned char)(*ptr);
+	}
 	g = shadow * (unsigned char)(*(ptr + 1));
-	b = shadow * (unsigned char)(tex.end ? *(ptr + 2) : *ptr);
 	return ((r << 16) + (g << 8) + b);
 }
 
