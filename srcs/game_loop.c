@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 10:25:22 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:27:24 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 	y++;
 	if (game->bullets >= 0)
 	{
-		x++
+		x++;
 	}	
 	return (0);
 }
