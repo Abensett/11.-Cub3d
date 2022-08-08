@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 09:51:24 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:54:02 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_life_bar(t_game *game)
 		j++;
 	}
 }
-static	ft_gun_2(t_game *game)
+static void	ft_gun_2(t_game *game)
 {
 	if (game->gun_shift)
 		game->gun_shift = game->gun_shift - 1;
