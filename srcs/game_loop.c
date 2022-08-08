@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:16:45 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:19:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,23 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 {
 	static int	weapon = 0;
 	
-	x++;
-	y++;
-	if (button == 3)
+	x++ = y++;
+	if (button == 2)
 	{
-		if (weapon == 0)
+		if (weapon++ == 0)
 		{
 			game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/knife.xpm", &game->gun[0].width, &game->gun[0].height);
 			game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/knife_2.xpm", &game->gun[1].width, &game->gun[1].height);
+		}
+		else
+		{
 			game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
 			game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
+			weapon = 0;
 		}
 	}
 	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
