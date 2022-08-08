@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:07:55 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 10:20:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:23:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ bool	check_void(t_game *game)
 
 void	infos(t_game *game)
 {
+	char*	bullets;
+
+	bullets = ft_itoa(game->bullets);
 	mlx_string_put(game->mlx.mlx, game->mlx.windows, 50, 50, 0xFF0000,
 	 "Minimap");
 	if (game->life <= 40)
@@ -36,4 +39,8 @@ void	infos(t_game *game)
 	if(game->bullets <= 0)
 			mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 800, 70,
 		 0xFFFFFF, "No more bullets !");
+	else
+		mlx_string_put(game->mlx.mlx, game->mlx.windows,  WINDOWS_X - 800, 70,
+		 0xFFFFFF, bullets);
+	free(bullets);
 }
