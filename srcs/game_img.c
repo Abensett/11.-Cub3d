@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:10:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:17:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	open_img(t_game *game)
 	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
 	game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/knife.xpm", &game->gun[0].width, &game->gun[0].height);
+			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
 	game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
 	game->lifebar.img = mlx_xpm_file_to_image(game->mlx.mlx,
