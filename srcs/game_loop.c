@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:24:32 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/08 11:25:29 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 	
 	x++;
 	y++;
-	mlx_destroy_image(game->mlx.mlx, game->gun[0].img);
-	mlx_destroy_image(game->mlx.mlx, game->gun[1].img);
 
 	if (button == 3)
 	{
+		mlx_destroy_image(game->mlx.mlx, game->gun[0].img);
+		mlx_destroy_image(game->mlx.mlx, game->gun[1].img);
 		if (weapon++ == 0)
 		{
 			game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
