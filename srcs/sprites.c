@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:43:19 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:43:51 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,9 +136,9 @@ void	draw_sprite(t_game *game, t_spritedata data)
 }
 void	draw_sprites(t_game *game)
 {
-	// t_spritedata	data;
-	// double			sprite_pos[2];
-	// double			det;
+	t_spritedata	data;
+	double			sprite_pos[2];
+	double			det;
 
 	compute_distances(game);
 	sort_sprites(game);
