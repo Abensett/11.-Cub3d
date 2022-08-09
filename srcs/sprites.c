@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:39:13 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:39:31 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,24 +144,24 @@ void	draw_sprites(t_game *game)
 	compute_distances(game);
 	sort_sprites(game);
 	data.index = 0;
-	while (data.index < game->nb_sprites)
-	{
-		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
-		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
-		det = 1.0 / (game->player.plane_x * game->player.dir_y
-			- game->player.dir_x * game->player.plane_y);
-		data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
-			- game->player.dir_x * sprite_pos[1]);
-		data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
-			+ game->player.plane_x * sprite_pos[1]);
-		data.sprite_x = (int)((WINDOWS_X / 2) *
-			(1 + data.transform[0] / data.transform[1]));
-		data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
-		if (!game->sprites[data.index].destroyed)
-			draw_sprite(game, data);
-		data.index++;
-	}
-	int		i;
+	// while (data.index < game->nb_sprites)
+	// {
+	// 	sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
+	// 	sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
+	// 	det = 1.0 / (game->player.plane_x * game->player.dir_y
+	// 		- game->player.dir_x * game->player.plane_y);
+	// 	data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
+	// 		- game->player.dir_x * sprite_pos[1]);
+	// 	data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
+	// 		+ game->player.plane_x * sprite_pos[1]);
+	// 	data.sprite_x = (int)((WINDOWS_X / 2) *
+	// 		(1 + data.transform[0] / data.transform[1]));
+	// 	data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
+	// 	if (!game->sprites[data.index].destroyed)
+	// 		draw_sprite(game, data);
+	// 	data.index++;
+	// }
+	// int		i;
 	int		j;
 	int		color;
 	i = 0.4 * WINDOWS_X;
