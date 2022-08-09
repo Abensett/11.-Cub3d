@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 01:55:01 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:55:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 		color = my_tex_color(game->sprite,
 			((i - bbox_x[0]) * 1.0) / (bbox_x[1] - bbox_x[0]),
 			((j - bbox_y[0]) * 1.0) / (bbox_y[1] - bbox_y[0]),
-			((bbox_x[1] - bbox_x[0]) * 3.0 / (WINDOWS_Y*2)));
+			((bbox_x[1] - bbox_x[0]) * 3.0 / (WINDOWS_Y)));
 		if (color != 0)
 			my_mlx_pixel_put(&game->windows, i, j, color);
 		j++;
