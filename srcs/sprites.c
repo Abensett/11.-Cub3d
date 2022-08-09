@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:33:24 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:33:42 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int		sprites_init(t_game *game)
 	int		j;
 	int		index;
 
+	printf("%d\n", game->nb_sprites);
 	if (!(game->sprites = ft_calloc(game->nb_sprites, sizeof(t_sprite))))
 		return (0);
-	printf("%d\n", game->nb_sprites);
 	index = 0;
 	i = 0;
 	while (game->map.map[i])
