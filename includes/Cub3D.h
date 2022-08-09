@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 00:12:33 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:24:52 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ typedef struct s_game
 	t_img		lifebar;
 	t_img		game_over;
 	t_img		gun[4];
+	t_img		sprite;
 	int				nb_sprites;
 	t_sprite		*sprites;
 	double			*depth;
