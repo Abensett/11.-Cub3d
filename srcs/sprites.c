@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:14:27 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:15:40 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		sprites_init(t_game *game)
 			j++;
 		}
 		i++;
-		printf("%d\n", game->map.map[i][j]);
+		printf("%d %d %d\n",i,j, game->map.map[i][j]);
 	}
 	return (1);
 }
