@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:13:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:13:17 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int		sprites_init(t_game *game)
 		return (0);
 	index = 0;
 	i = 0;
-	printf("%d\n", index);
 
 	while (game->map.map[i])
 	{
@@ -42,6 +41,7 @@ int		sprites_init(t_game *game)
 			j++;
 		}
 		i++;
+		printf("%d\n", index);
 	}
 	return (1);
 }
