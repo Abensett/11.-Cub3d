@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:59:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:52:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ void	draw_sprites(t_game *game)
 
 	compute_distances(game);
 	sort_sprites(game);
-	load_texture(game, &game->sprite, "./img/barrel.xpm");
+	load_texture(game, &game->sprite, "./img/sheep.xpm");
 
 	data.index = 0;
 	while (data.index < game->nb_sprites)
