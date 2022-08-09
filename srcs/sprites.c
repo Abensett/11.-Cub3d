@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:42:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:42:24 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ void	draw_sprites(t_game *game)
 		j = 0.6 * WINDOWS_Y;
 		while (j < WINDOWS_Y)
 		{
-			color = my_tex_color(game->gun[0],
+			color = my_tex_color(game->barrel,
 					((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 					((j - 0.6 * WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
 			if (color != 0)
