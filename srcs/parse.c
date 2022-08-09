@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 09:43:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:48:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool	check_character(t_game *game, int x, int y, char c)
 bool	check_element(char c)
 {
 	if (c != ' ' && c != '0' && c != '1' && c != 'N'
-		&& c != 'S' && c != 'E' && c != 'W')
+		&& c != 'S' && c != 'E' && c != 'W' && c !='2')
 		return (0);
 	return (1);
 }
