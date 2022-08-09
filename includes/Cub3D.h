@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 02:48:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:51:56 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,5 +255,6 @@ int				load_texture(t_game *game, t_img *texture, char *filename);
 int				my_tex_color(t_img tex, double u, double v, double shadow);
 void			check_dead_win(t_game *game);
 void			infos(t_game *game);
+int				sprites_init(t_game *world);
 void			draw_sprites(t_game *game);
 #endif
