@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 00:03:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:04:35 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,9 @@ bool	parse_element(t_game *game)
 				return (0);
 			if (!check_character(game, x, y, game->map.map[x][y]))
 				return (0);
-			if (game->map.map[x][y] == 2)
+			if (game->map.map[x][y] == '2')
 				game->nb_sprites++;
 			y++;
-			printf("%d\n", game->map.map[x][y]);
 		}
 		x++;
 	}
