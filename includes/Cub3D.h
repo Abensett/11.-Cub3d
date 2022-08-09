@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:26:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:31:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ typedef struct s_img
 
 typedef struct s_game
 {
+	int			won;
 	int			life;
 	int			bullets;
 	float		speed;
@@ -174,7 +175,34 @@ typedef struct s_game
 	t_img		lifebar;
 	t_img		game_over;
 	t_img		gun[4];
+	int				nb_sprites;
+	t_sprite		*sprites;
+	double			*depth;
 }	t_game;
+
+struct Sprite
+{
+  double x;
+  double y;
+  int texture;
+};
+
+typedef struct		s_sprite
+{
+	int		pos[2];
+	double	distance;
+	int		killable;
+	int		destroyed;
+	t_img	texture;
+}					t_sprite;
+
+typedef struct		s_spritedata
+{
+	double	transform[2];
+	int		sprite_x;
+	int		sprite_size;
+	int		index;
+}					t_spritedata;
 
 void			get_file(char *map, t_game *game);
 void			parse_map(t_game *game);

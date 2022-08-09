@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `srcs/main.o', needed by `Cub3d'.  Stop.
 
 
-# Make data base, printed on Sat Aug  6 18:59:53 2022
+# Make data base, printed on Tue Aug  9 02:18:38 2022
 
 # Variables
 
@@ -93,7 +93,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 15)
-SRCS = main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c draw_sky.c game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c life_bar.c
+SRCS = main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c minimap.c draw_sky.c game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c life_bar.c gameoverorwon.c sprites.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 29)
@@ -206,12 +206,18 @@ srcs/clean.o:
 #  File has not been updated.
 
 # Not a target:
+srcs/sprites.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 srcs/get_file.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Cub3d: srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/minimap.o srcs/draw_sky.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o srcs/life_bar.o
+Cub3d: srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/minimap.o srcs/draw_sky.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o srcs/life_bar.o srcs/gameoverorwon.o srcs/sprites.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -238,7 +244,7 @@ srcs/game_raycasting.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-03 16:58:38
+#  Last modified 2022-08-09 02:18:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -258,6 +264,12 @@ srcs/game_utils.o:
 
 # Not a target:
 srcs/parse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/gameoverorwon.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -308,6 +320,7 @@ clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 45):
 	make clean -C libft
@@ -323,7 +336,6 @@ srcs/game_move2.o:
 
 # Not a target:
 srcs/game_utils2.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -373,7 +385,7 @@ srcs/draw_sky.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=28/1024=3%, Rehash=0, Collisions=0/67=0%
+# Load=30/1024=3%, Rehash=0, Collisions=0/71=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -385,6 +397,6 @@ srcs/draw_sky.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug  6 18:59:53 2022
+# Finished Make data base on Tue Aug  9 02:18:38 2022
 
  

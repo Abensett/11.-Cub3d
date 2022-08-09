@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/abou/Desktop/CUB3DD'
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/main.c -o srcs/main.o
+ 
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/get_file.c -o srcs/get_file.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/parse.c -o srcs/parse.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/square_map.c -o srcs/square_map.o
@@ -18,8 +19,10 @@ clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/game_utils.c
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/game_utils2.c -o srcs/game_utils2.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/clean.c -o srcs/clean.o
 clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/life_bar.c -o srcs/life_bar.o
+clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/gameoverorwon.c -o srcs/gameoverorwon.o
+clang -Wall -Werror -Wextra -O3 -I includes -I libft -I mlx -c srcs/sprites.c -o srcs/sprites.o
 make -C libft
 make -C mlx
-clang -Wall -Werror -Wextra -O3 -L libft -L mlx srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/minimap.o srcs/draw_sky.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o srcs/life_bar.o -o Cub3d -lft -lm -lmlx -lXext -lX11
+clang -Wall -Werror -Wextra -O3 -L libft -L mlx srcs/main.o srcs/get_file.o srcs/parse.o srcs/square_map.o srcs/game_loop.o srcs/game_img.o srcs/game_raycasting.o srcs/minimap.o srcs/draw_sky.o srcs/game_display.o srcs/game_move.o srcs/game_move2.o srcs/parse_wall.o srcs/parse_map.o srcs/game_utils.o srcs/game_utils2.o srcs/clean.o srcs/life_bar.o srcs/gameoverorwon.o srcs/sprites.o -o Cub3d -lft -lm -lmlx -lXext -lX11
 make: Leaving directory `/Users/abou/Desktop/CUB3DD'
  
