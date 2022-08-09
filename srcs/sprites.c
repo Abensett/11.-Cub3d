@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:21:23 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:21:38 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sprite_init(t_game *game, int index, int i, int j)
 	load_texture(game, &game->sprites[index].texture, "./img/barrel.xpm");
 	game->sprites[index].pos[0] = i;
 	game->sprites[index].pos[1] = j;
-	printf("%index\n", i, j);
+	printf("%d\n", index);
 }
 
 
