@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:22:21 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:22:31 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sprite_init(t_game *game, int index, int i, int j)
 	load_texture(game, &game->sprites[index].texture, "./img/barrel.xpm");
 	game->sprites[index].pos[0] = i;
 	game->sprites[index].pos[1] = j;
-	printf("OH PUTAIN %d\n", index);
+	printf("%d\n", index);
 }
 
 
@@ -39,6 +39,7 @@ int		sprites_init(t_game *game)
 			if (game->map.map[i][j] == '2')
 				sprite_init(game, index++, i, j);
 			j++;
+			printf("%d %d %c\n",i,j, game->map.map[i][j]);
 		}
 		i++;
 	}
