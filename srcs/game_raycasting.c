@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 01:04:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:07:40 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,6 @@ void	raycasting(t_game *game)
 	int	x;
 
 	x = 0;
-	draw_sprites(game);
 	while (x < WINDOWS_Y)
 		draw_sky(game, x++);
 	x = 0;
@@ -138,6 +137,7 @@ void	raycasting(t_game *game)
 		
 		game->depth[x] = game->ray.perp_wall_dist;
 	}
+	draw_sprites(game);
 	draw_mini_map(game, 0);
 	ft_life_bar(game);
 	ft_gun(game);

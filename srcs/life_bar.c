@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/08 11:27:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:08:15 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	ft_life_bar(t_game *game)
 
 static void	ft_gun_2(t_game *game)
 {
+	int		cursor;
+
 	if (game->gun_dir)
 		game->gun_shift = game->gun_shift - 1;
 	else
@@ -91,6 +93,14 @@ static void	ft_gun_2(t_game *game)
 		game->gun_dir = 1;
 	if (game->gun_shift < 0)
 		game->gun_shift = 0;
+	cursor = 0;
+	while (cursor < 20)
+		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2 - 10 + cursor++,
+			WINDOWS_Y / 2, 0xFF0000);
+	cursor = 0;
+	while (cursor < 20)
+		my_mlx_pixel_put(&game->windows, WINDOWS_X / 2,
+			WINDOWS_Y / 2 - 10 + cursor++, 0xFF0000);
 }
 
 void	ft_gun(t_game *game)
