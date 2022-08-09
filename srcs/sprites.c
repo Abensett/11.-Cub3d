@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:42:36 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:43:19 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	while (j < (bbox_y[1] >= WINDOWS_Y
 		? WINDOWS_Y - 1 : bbox_y[1]))
 	{
-		color = my_tex_color(game->sprites[data.index].texture,
+		color = my_tex_color(game->sprite,
 			((i - bbox_x[0]) * 1.0) / (bbox_x[1] - bbox_x[0]),
 			((j - bbox_y[0]) * 1.0) / (bbox_y[1] - bbox_y[0]),
 			((bbox_x[1] - bbox_x[0]) * 3.0 / WINDOWS_Y));
@@ -144,40 +144,40 @@ void	draw_sprites(t_game *game)
 	sort_sprites(game);
 	load_texture(game, &game->sprite, "./img/barrel.xpm");
 
-	// data.index = 0;
-	// while (data.index < game->nb_sprites)
-	// {
-	// 	sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
-	// 	sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
-	// 	det = 1.0 / (game->player.plane_x * game->player.dir_y
-	// 		- game->player.dir_x * game->player.plane_y);
-	// 	data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
-	// 		- game->player.dir_x * sprite_pos[1]);
-	// 	data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
-	// 		+ game->player.plane_x * sprite_pos[1]);
-	// 	data.sprite_x = (int)((WINDOWS_X / 2) *
-	// 		(1 + data.transform[0] / data.transform[1]));
-	// 	data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
-	// 	if (!game->sprites[data.index].destroyed)
-	// 		draw_sprite(game, data);
-	// 	data.index++;
-	// }
-	int		i;
-	int		j;
-	int		color;
-	i = 0.4 * WINDOWS_X;
-	while (i < 0.8 * WINDOWS_X)
+	data.index = 0;
+	while (data.index < game->nb_sprites)
 	{
-		j = 0.6 * WINDOWS_Y;
-		while (j < WINDOWS_Y)
-		{
-			color = my_tex_color(game->sprite,
-					((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
-					((j - 0.6 * WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
-			if (color != 0)
-				my_mlx_pixel_put(&game->windows, i, j, color);
-			j++;
-		}
-		i++;
+		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
+		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
+		det = 1.0 / (game->player.plane_x * game->player.dir_y
+			- game->player.dir_x * game->player.plane_y);
+		data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
+			- game->player.dir_x * sprite_pos[1]);
+		data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
+			+ game->player.plane_x * sprite_pos[1]);
+		data.sprite_x = (int)((WINDOWS_X / 2) *
+			(1 + data.transform[0] / data.transform[1]));
+		data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
+		if (!game->sprites[data.index].destroyed)
+			draw_sprite(game, data);
+		data.index++;
 	}
+	// int		i;
+	// int		j;
+	// int		color;
+	// i = 0.4 * WINDOWS_X;
+	// while (i < 0.8 * WINDOWS_X)
+	// {
+	// 	j = 0.6 * WINDOWS_Y;
+	// 	while (j < WINDOWS_Y)
+	// 	{
+	// 		color = my_tex_color(game->sprite,
+	// 				((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
+	// 				((j - 0.6 * WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
+	// 		if (color != 0)
+	// 			my_mlx_pixel_put(&game->windows, i, j, color);
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
 }
