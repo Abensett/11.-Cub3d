@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 01:28:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:23:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	ft_handle_mouse(int button, int x, int y, t_game *game)
 		if (weapon++ == 0)
 		{
 			game->shotornot = 2;
-		
 		}
 		else
 		{
@@ -73,7 +72,7 @@ void	game_loop(t_game *game)
 {
 	game->mlx.mlx = mlx_init();
 	game->mlx.windows = mlx_new_window(game->mlx.mlx,
-			WINDOWS_X, WINDOWS_Y, "Cub3d");
+			WINDOWS_X, WINDOWS_Y, "Cub3d bonus");
 	open_img(game);
 	mlx_loop_hook(game->mlx.mlx, &render_next_frame, game);
 	mlx_hook(game->mlx.windows, 2, 1L << 0, input, game);
