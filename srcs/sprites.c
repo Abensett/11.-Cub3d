@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:38:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:38:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sprite_init(t_game *game, int index, int i, int j)
 {
 	printf("%d\n", index);
 
-	load_texture(game, &game->sprite, "./img/barrel.xpm");
 	game->sprites[index].pos[0] = i;
 	game->sprites[index].pos[1] = j;
 }
@@ -171,7 +170,7 @@ void	draw_sprites(t_game *game)
 		j = 0.6 * WINDOWS_Y;
 		while (j < WINDOWS_Y)
 		{
-			color = my_tex_color(game->sprite,
+			color = my_tex_color(game->gun,
 					((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
 					((j - 0.6 * WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
 			if (color != 0)
