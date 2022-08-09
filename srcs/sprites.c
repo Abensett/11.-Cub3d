@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/09 02:40:27 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:52:12 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void	sprite_init(t_game *game, int index, int i, int j)
 }
 
 
-int		sprites_init(t_game *world)
+int		sprites_init(t_game *game)
 {
 	int		i;
 	int		j;
 	int		index;
 
-	if (!(world->sprites = ft_calloc(world->nb_sprites, sizeof(t_sprite))))
+	if (!(game->sprites = ft_calloc(game->nb_sprites, sizeof(t_sprite))))
 		return (0);
 	index = 0;
 	i = 0;
-	while (world->map.map[i])
+	while (game->map.map[i])
 	{
 		j = 0;
-		while (world->map.map[i][j])
+		while (game->map.map[i][j])
 		{
-			if (world->map.map[i][j] >= 2)
-				sprite_init(world, index++, i, j);
+			if (game->map.map[i][j] >= 2)
+				sprite_init(game, index++, i, j);
 			j++;
 		}
 		i++;
