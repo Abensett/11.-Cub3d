@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 03:09:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:59:21 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	player_dir2(t_game *game, char dir)
 		game->player.plane_y = 0;
 	}
 	game->bullets = 20;
+	sprites_init(game);
 }
 
 /* default values when directed NORTH or SOUTH */
