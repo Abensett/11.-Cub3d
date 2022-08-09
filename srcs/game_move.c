@@ -89,7 +89,7 @@ void	move_down(t_game *game)
 	}
 	else
 	{
-		game->life -= 100 * game->speed;
+		game->life -= 10 * game->speed;
 		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
 		game->player.pos_x += game->player.dir_x * game->speed;
 		game->player.pos_y += game->player.dir_y * game->speed;
