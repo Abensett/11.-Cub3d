@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 02:38:46 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:39:34 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,6 +241,7 @@ void			rotate_left(t_game *game);
 int				input(int key, t_game *game);
 bool			check_move(t_game *game, float tmp_x, float tmp_y);
 
+// BONUS
 int				exput(int key, t_game *game);
 void			draw_mini_map(t_game *game, int color);
 void			draw_sky(t_game *game, int y);
@@ -251,6 +252,7 @@ void			ft_handle_shoot(t_game *game);
 void			write_on_screen(t_game *game, char *text, int pos[2],
 					int color);
 int				load_texture(t_game *game, t_img *texture, char *filename);
+int				my_tex_color(t_img tex, double u, double v, double shadow);
 void			check_dead_win(t_game *game);
 void			infos(t_game *game);
 
