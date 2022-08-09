@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 01:52:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 01:52:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,9 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	int		color;
 
 	bbox_y[0] = WINDOWS_Y / 2
-		- data.sprite_size / 2;
+		- data.sprite_size / 3;
 	bbox_y[1] = WINDOWS_Y / 2
-		+ data.sprite_size / 2;
+		+ data.sprite_size / 3;
 	j = (bbox_y[0] < 0) ? 0 : bbox_y[0];
 	while (j < (bbox_y[1] >= WINDOWS_Y
 		? WINDOWS_Y - 1 : bbox_y[1]))
