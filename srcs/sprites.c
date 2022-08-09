@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:37:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:38:29 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sprite_init(t_game *game, int index, int i, int j)
 {
 	printf("%d\n", index);
 
-	load_texture(game, &game->sprite,"./img/gameover.xpm");
+	load_texture(game, &game->sprite, "./img/gameover.xpm");
 	game->sprites[index].pos[0] = i;
 	game->sprites[index].pos[1] = j;
 }
