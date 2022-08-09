@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:18:07 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:18:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		sprites_init(t_game *game)
 	while (game->map.map[i])
 	{
 		j = 0;
-		printf("%s %s %s\n",i,j, game->map.map[i][j]);
+		printf("%d %d %s\n",i,j, game->map.map[i][j]);
 		while (game->map.map[i][j])
 		{
 			if (game->map.map[i][j] == 2)
