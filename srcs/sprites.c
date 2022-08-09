@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:05:37 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:10:20 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,5 +155,23 @@ void	draw_sprites(t_game *game)
 		if (!game->sprites[data.index].destroyed)
 			draw_sprite(game, data);
 		data.index++;
+	}
+	int		i;
+	int		j;
+	int		color;
+	i = 0.4 * WINDOWS_X;
+	while (i < 0.8 * WINDOWS_X)
+	{
+		j = 0.6 * WINDOWS_Y;
+		while (j < WINDOWS_Y)
+		{
+			color = my_tex_color(game->sprites[0].texture,
+					((i - 0.4 * WINDOWS_X) / (0.4 * WINDOWS_X)),
+					((j - 0.6 * WINDOWS_Y) / (0.4 * WINDOWS_Y)), 1);
+			if (color != 0)
+				my_mlx_pixel_put(&game->windows, i, j, color);
+			j++;
+		}
+		i++;
 	}
 }
