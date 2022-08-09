@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 02:52:07 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:12:33 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,12 +151,6 @@ typedef struct s_img
 	int		height;
 }	t_img;
 
-struct Sprite
-{
-  double x;
-  double y;
-  int texture;
-};
 
 typedef struct		s_sprite
 {
