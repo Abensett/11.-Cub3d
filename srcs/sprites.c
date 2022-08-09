@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 00:39:31 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:39:43 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void	draw_sprites(t_game *game)
 	// 		draw_sprite(game, data);
 	// 	data.index++;
 	// }
-	// int		i;
+	int		i;
 	int		j;
 	int		color;
 	i = 0.4 * WINDOWS_X;
