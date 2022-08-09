@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/04 15:42:29 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:58:39 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	free_parse(t_game *game)
 	if (game->texture.west != NULL)
 		free(game->texture.west);
 	if (game->texture.skys != NULL)
-		free(game->texture.west);
+		free(game->texture.skys);
 	if (game->texture.floors != NULL)
-		free(game->texture.west);
+		free(game->texture.floors);
 	ft_free_tab(game->map.map);
 	free(game);
 	system("killall -9 vlc");
