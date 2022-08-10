@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:26:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:26:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	}
 }
 
-staticvoid	draw_one_sprite(t_game *game, t_spritedata data)
+static void	draw_one_sprite(t_game *game, t_spritedata data)
 {
 	int		bbox_x[2];
 	int		i;
