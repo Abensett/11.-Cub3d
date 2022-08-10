@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 02:33:59 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:35:15 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ typedef struct		s_sprite
 	int		pos[2];
 	double	distance;
 	int		alive;
+	int		dead;
 	t_img	texture;
 }					t_sprite;
 
