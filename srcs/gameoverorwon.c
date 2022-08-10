@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 02:51:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:59:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,16 @@ void 	check_dead_win(t_game *game)
 	load_texture(game, &game->game_over, "./img/gameover.xpm");
 	if(game->life <= 0)
 	{
-			system("killall -9 vlc");
-			system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
+		system("killall -9 vlc");
+		system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
 			mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->game_over.img, 0, -150);
 		sleep(10);
+	}
+	else if (game->won)
+	{
+		system("killall -9 vlc");
+		system("cvlc --play-and-exit img/win.mp3 &>/dev/null &");
 	}
 	else
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
