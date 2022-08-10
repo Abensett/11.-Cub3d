@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:22:44 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 02:47:09 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:52:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,17 @@ void	draw_mini_map(t_game *game, int color)
 		j = 0;
 		while (game->map.map[i][j] != '\0')
 		{
-			if (game->map.map[i][j] == '1' || game->map.map[i][j] == '2')
+			if (game->map.map[i][j] == '1')
 				draw_square(game, i, j, color);
-			if (game->map.map[i][j] == '1' || game->map.map[i][j] == '2')
-				draw_square(game, i, j, color);
+			if (game->map.map[i][j] == '2')
+				draw_square(game, i, j, 0xFF0000);
 			else if (game->map.map[i][j++] == ' ')
 			{
 				j++;
 				continue ;
 			}
 			else
-				draw_square(game, i, j, 0x808080);
+				draw_square(game, i, j, 0x00FF00);
 			j++;
 		}
 		i++;
