@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 05:03:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 05:07:50 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	compute_distances(t_game *game)
 	i = 0;
 	while (i < game->nb_sprites)
 	{
-		game->sprites[i].distance 
-		=	pow(game->player.pos_x - game->sprites[i].pos[0], 2)
+		game->sprites[i].distance
+			= pow(game->player.pos_x - game->sprites[i].pos[0], 2)
 			+ pow(game->player.pos_y - game->sprites[i].pos[1], 2);
 		if (!game->sprites[i].dead)
 			game->won = 0;
