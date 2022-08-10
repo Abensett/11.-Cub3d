@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 03:50:23 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:50:43 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void 	check_dead_win(t_game *game)
 		game->game_over.img, 0, -150);
 		system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
 		sleep(7);
-		free_and_destroy(game);
 	}
 	else if (game->won)
 	{
