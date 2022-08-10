@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:32:32 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 02:44:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:45:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ bool	check_move(t_game *game, float tmp_x, float tmp_y)
 		return (0);
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == '2')
 	{
+		system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
 		game->life -= 33;
 		return (0);
 	}
