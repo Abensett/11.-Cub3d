@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 03:26:54 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:27:27 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void 	check_dead_win(t_game *game)
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
 		sleep(10);
+		free_and_destroy(game);
 	}
 	else
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
