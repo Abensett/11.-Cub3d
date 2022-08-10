@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:44:48 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:47:51 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	while (j < sprite_y[1])
 	{
 		color = my_tex_color(game->sprite,
-			((i - sprite_x[0]) * 1.0) / (sprite_x[1] - sprite_x[0]),
-			((j - sprite_y[0]) * 1.0) / (sprite_y[1] - sprite_y[0]),
-			((sprite_x[1] - sprite_x[0]) * 3.0 / (WINDOWS_Y)));
+				((i - sprite_x[0]) * 1.0) / (sprite_x[1] - sprite_x[0]),
+				((j - sprite_y[0]) * 1.0) / (sprite_y[1] - sprite_y[0]),
+				((sprite_x[1] - sprite_x[0]) * 3.0 / (WINDOWS_Y)));
 		if (color != 0)
 			my_mlx_pixel_put(&game->windows, i, j, color);
 		j++;
@@ -89,9 +89,8 @@ static void	draw_one_sprite(t_game *game, t_spritedata data)
 
 	sprite_x[0] = data.sprite_x - data.sprite_size / 2;
 	sprite_x[1] = data.sprite_x + data.sprite_size / 2;
-	game->sprites[data.index].alive = sprite_x[0] < WINDOWS_X /
-		2 && sprite_x[1] > WINDOWS_X / 2
-		&& data.resize[1] < 2;
+	game->sprites[data.index].alive = sprite_x[0] < WINDOWS_X
+		/ 2 &&	sprite_x[1] > WINDOWS_X / 2 && data.resize[1] < 2;
 	i = (sprite_x[0] < 0) ? 0 : sprite_x[0];
 	while (i <= (sprite_x[1] >= WINDOWS_X ?
 		WINDOWS_X - 1 : sprite_x[1]))
