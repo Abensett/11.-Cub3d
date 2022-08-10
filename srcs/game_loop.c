@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:36:13 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:36:52 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_handle_shoot(t_game *game)
 {
 	int	i;
 	
-	if (game->bullets >= 0 && game->shotornot < 2) 
+	if (game->bullets > 0 && game->shotornot < 2) 
 	{
 		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
 		game->bullets--;
