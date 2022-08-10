@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:55:17 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:57:54 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 			my_mlx_pixel_put(&game->windows, i, j, color);
 		j++;
 		if (j >= WINDOWS_Y)
-			break ;
+			j = WINDOWS_Y - 1;
 	}
 }
 
@@ -90,19 +90,21 @@ static void	draw_one_sprite(t_game *game, t_spritedata data)
 	sprite_x[0] = data.sprite_x - data.sprite_size / 2;
 	sprite_x[1] = data.sprite_x + data.sprite_size / 2;
 	game->sprites[data.index].alive = (sprite_x[0] < WINDOWS_X
-			/ 2 && sprite_x[1] > WINDOWS_X / 2 && data.resize[1] < 2);
+		/ 2 && sprite_x[1] > WINDOWS_X / 2 && data.resize[1] < 2);
 	if (sprite_x[0] < 0)
 		i = 0;
 	else
 		i = sprite_x[0];
-	while (i <= sprite_x[0])
+	while (i <= (sprite_x[1] >= WINDOWS_X ?
+		WINDOWS_X - 1 : sprite_x[1]))
 	{
 		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
 			draw_line_sprite(game, data, i, sprite_x);
 		i++;
 		if (i >= WINDOWS_X)
-			break ;
+			i = WINDOWS_X - 1;
 	}
+
 }
 
 void	draw_sprites(t_game *game)
@@ -113,23 +115,23 @@ void	draw_sprites(t_game *game)
 
 	compute_distances(game);
 	sort_sprites(game);
-	data.index = -1;
-	while (++data.index <= game->nb_sprites)
+	load_texture(game, &game->sprite, "./img/sheep.xpm");
+	data.index = 0;
+	while (data.index < game->nb_sprites)
 	{
-		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5
-			- game->player.pos_x;
-		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5
-			- game->player.pos_y;
+		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
+		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
 		det = 1.0 / (game->player.plane_x * game->player.dir_y
-				- game->player.dir_x * game->player.plane_y);
+			- game->player.dir_x * game->player.plane_y);
 		data.resize[0] = det * (game->player.dir_y * sprite_pos[0]
-				- game->player.dir_x * sprite_pos[1]);
+			- game->player.dir_x * sprite_pos[1]);
 		data.resize[1] = det * (-game->player.plane_y * sprite_pos[0]
-				+ game->player.plane_x * sprite_pos[1]);
-		data.sprite_x = (int)((WINDOWS_X / 2)
-				* (1 + data.resize[0] / data.resize[1]));
+			+ game->player.plane_x * sprite_pos[1 ]);
+		data.sprite_x = (int)((WINDOWS_X / 2) *
+			(1 + data.resize[0] / data.resize[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.resize[1]));
 		if (!game->sprites[data.index].dead)
 			draw_one_sprite(game, data);
+		data.index++;
 	}
 }
