@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:38:23 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:40:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_handle_shoot(t_game *game)
 {
 	int	i;
 	
-	if (game->shotornot < 2) 
+	if (game->bullets > 0 && game->shotornot < 2) 
 	{
 		if(game->bullets == 0)
 			return ;
@@ -53,8 +53,10 @@ void	ft_handle_shoot(t_game *game)
 		}
 	}
 	else
+	{
 		system("cvlc --play-and-exit img/knife.mp3 &>/dev/null &");
-	game->shotornot++;
+		game->shotornot++;
+	}
 }
 
 int	ft_handle_mouse(int button, int x, int y, t_game *game)
