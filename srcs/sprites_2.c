@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sprites.c                                          :+:      :+:    :+:   */
+/*   sprites_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:18:43 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:13:01 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		sprites_init(t_game *game)
 	return (1);
 }
 
-void	sprites_distances(t_game *game)
+void	compute_distances(t_game *game)
 {
 	int	i;
 
@@ -109,7 +109,7 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	}
 }
 
-void	draw_one_sprite(t_game *game, t_spritedata data)
+void	draw_sprite(t_game *game, t_spritedata data)
 {
 	int		bbox_x[2];
 	int		i;
@@ -118,24 +118,23 @@ void	draw_one_sprite(t_game *game, t_spritedata data)
 	bbox_x[1] = data.sprite_x + data.sprite_size / 2;
 	game->sprites[data.index].alive = bbox_x[0] < WINDOWS_X /
 		2 && bbox_x[1] > WINDOWS_X / 2
-		&& data.resize[1] < 2;
+		&& data.transform[1] < 2;
 	i = (bbox_x[0] < 0) ? 0 : bbox_x[0];
 	while (i <= (bbox_x[1] >= WINDOWS_X ?
 		WINDOWS_X - 1 : bbox_x[1]))
 	{
-		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
+		if (data.transform[1] > 0 && data.transform[1] < game->depth[i])
 			draw_line_sprite(game, data, i, bbox_x);
 		i++;
 	}
 }
-
 void	draw_sprites(t_game *game)
 {
 	t_spritedata	data;
 	double			sprite_pos[2];
 	double			det;
 
-	sprites_distances(game);
+	compute_distances(game);
 	sort_sprites(game);
 	load_texture(game, &game->sprite, "./img/sheep.xpm");
 	data.index = 0;
@@ -145,15 +144,15 @@ void	draw_sprites(t_game *game)
 		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
 		det = 1.0 / (game->player.plane_x * game->player.dir_y
 			- game->player.dir_x * game->player.plane_y);
-		data.resize[0] = det * (game->player.dir_y * sprite_pos[0]
+		data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
 			- game->player.dir_x * sprite_pos[1]);
-		data.resize[1] = det * (-game->player.plane_y * sprite_pos[0]
-			+ game->player.plane_x * sprite_pos[1]);
+		data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
+			+ game->player.plane_x * sprite_pos[1 ]);
 		data.sprite_x = (int)((WINDOWS_X / 2) *
-			(1 + data.resize[0] / data.resize[1]));
-		data.sprite_size = abs((int)(WINDOWS_Y / data.resize[1]));
+			(1 + data.transform[0] / data.transform[1]));
+		data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
 		if (!game->sprites[data.index].dead)
-			draw_one_sprite(game, data);
+			draw_sprite(game, data);
 		data.index++;
 	}
 }

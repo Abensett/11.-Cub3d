@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:42:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:15:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,8 +151,7 @@ typedef struct s_img
 	int		height;
 }	t_img;
 
-
-typedef struct		s_sprite
+typedef struct s_sprite
 {
 	int		pos[2];
 	double	distance;
@@ -161,13 +160,14 @@ typedef struct		s_sprite
 	t_img	texture;
 }					t_sprite;
 
-typedef struct		s_spritedata
+typedef struct s_spritedata
 {
-	double	transform[2];
+	double	resize[2];
 	int		sprite_x;
 	int		sprite_size;
 	int		index;
 }					t_spritedata;
+
 typedef struct s_game
 {
 	int			won;
@@ -192,12 +192,10 @@ typedef struct s_game
 	t_img		game_over;
 	t_img		gun[4];
 	t_img		sprite;
-	int				nb_sprites;
-	t_sprite		*sprites;
-	double			*depth;
+	int			nb_sprites;
+	t_sprite	*sprites;
+	double		*depth;
 }	t_game;
-
-
 
 void			get_file(char *map, t_game *game);
 void			parse_map(t_game *game);
@@ -239,7 +237,6 @@ bool			check_move(t_game *game, float tmp_x, float tmp_y);
 int				exput(int key, t_game *game);
 void			draw_mini_map(t_game *game, int color);
 void			draw_sky(t_game *game, int y);
-int				apply_shadow(double dist, int color);
 void			ft_life_bar(t_game *game);
 void			ft_gun(t_game *game);
 void			ft_handle_shoot(t_game *game);

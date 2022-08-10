@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 01:07:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:02:39 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	put_tex(t_game *game, int x)
 
 void	verline(t_game *game, int x, int sky)
 {
-
 	while (game->ray.draw_start < game->ray.draw_end)
 	{
 		game->ray.tex_y = (int)game->ray.tex_pos & (TEX_SIZE - 1);

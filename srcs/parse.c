@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:48:28 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:10:59 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool	check_character(t_game *game, int x, int y, char c)
 bool	check_element(char c)
 {
 	if (c != ' ' && c != '0' && c != '1' && c != 'N'
-		&& c != 'S' && c != 'E' && c != 'W' && c !='2')
+		&& c != 'S' && c != 'E' && c != 'W' && c != '2')
 		return (0);
 	return (1);
 }
@@ -96,7 +96,6 @@ bool	parse_element(t_game *game)
 	int	y;
 
 	x = 0;
-
 	game->nb_sprites = 0;
 	while (game->map.map[x])
 	{

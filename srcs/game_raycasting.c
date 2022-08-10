@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 01:07:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:07:56 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ void	raycasting(t_game *game)
 		ray_hit(game);
 		ray_draw(game);
 		verline(game, x++, 0);
-		
 		game->depth[x] = game->ray.perp_wall_dist;
 	}
 	draw_sprites(game);
