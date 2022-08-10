@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:25:34 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:26:02 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ void	draw_sprites(t_game *game)
 			(1 + data.resize[0] / data.resize[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.resize[1]));
 		if (!game->sprites[data.index].dead)
-			draw_sprite(game, data);
+			draw_one_sprite(game, data);
 		data.index++;
 	}
 }
