@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/09 02:58:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 09:23:05 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	clean_img(t_game *game)
 // destroy images and windows, free map and texture then game and exit
 int	free_and_destroy(t_game *game)
 {
+	int i;
 	mlx_destroy_image(game->mlx.mlx, game->north.img);
 	mlx_destroy_image(game->mlx.mlx, game->south.img);
 	mlx_destroy_image(game->mlx.mlx, game->west.img);
@@ -67,6 +68,10 @@ int	free_and_destroy(t_game *game)
 	mlx_destroy_image(game->mlx.mlx, game->floor.img);
 	mlx_destroy_image(game->mlx.mlx, game->windows.img);
 	mlx_destroy_window(game->mlx.mlx, game->mlx.windows);
+	while (i < 4)
+		mlx_destroy_image(game->mlx.mlx, game->gun[i++].img);
+	mlx_destroy_image(game->mlx.mlx, game->game_over.img);
+	mlx_destroy_image(game->mlx.mlx, game->sprite.img);
 	mlx_destroy_display(game->mlx.mlx);
 	free(game->texture.east);
 	free(game->texture.north);
