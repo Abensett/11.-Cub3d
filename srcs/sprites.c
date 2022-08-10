@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 02:35:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:36:47 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	compute_distances(t_game *game)
 		game->sprites[i].distance =
 			pow(game->player.pos_x - game->sprites[i].pos[0], 2)
 			+ pow(game->player.pos_y - game->sprites[i].pos[1], 2);
-		if (!game->sprites[i].killed)
+		if (!game->sprites[i].dead)
 			game->won = 0;
 		i++;
 	}
@@ -154,7 +154,7 @@ void	draw_sprites(t_game *game)
 		data.transform[0] = det * (game->player.dir_y * sprite_pos[0]
 			- game->player.dir_x * sprite_pos[1]);
 		data.transform[1] = det * (-game->player.plane_y * sprite_pos[0]
-			+ game->player.plane_x * sprite_pos[1]);
+			+ game->player.plane_x * sprite_pos[1 ]);
 		data.sprite_x = (int)((WINDOWS_X / 2) *
 			(1 + data.transform[0] / data.transform[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
