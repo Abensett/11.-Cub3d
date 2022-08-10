@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:57:54 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 05:03:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	compute_distances(t_game *game)
 	i = 0;
 	while (i < game->nb_sprites)
 	{
-		game->sprites[i].distance
-			= pow(game->player.pos_x - game->sprites[i].pos[0], 2)
+		game->sprites[i].distance 
+		=	pow(game->player.pos_x - game->sprites[i].pos[0], 2)
 			+ pow(game->player.pos_y - game->sprites[i].pos[1], 2);
 		if (!game->sprites[i].dead)
 			game->won = 0;
@@ -54,55 +54,47 @@ void	sort_sprites(t_game *game)
 }
 
 void	draw_line_sprite(t_game *game, t_spritedata data, int i,
-	int sprite_x[2])
+	int bbox_x[2])
 {
-	int		sprite_y[2];
+	int		bbox_y[2];
 	int		j;
 	int		color;
 
-	sprite_y[0] = WINDOWS_Y / 2
+	bbox_y[0] = WINDOWS_Y / 2
 		- data.sprite_size / 2;
-	sprite_y[1] = WINDOWS_Y / 2
+	bbox_y[1] = WINDOWS_Y / 2
 		+ data.sprite_size / 2;
-	if (sprite_y[0] < 0)
-		j = 0;
-	else
-		j = sprite_y[0];
-	while (j < sprite_y[1])
+	j = (bbox_y[0] < 0) ? 0 : bbox_y[0];
+	while (j < (bbox_y[1] >= WINDOWS_Y
+		? WINDOWS_Y - 1 : bbox_y[1]))
 	{
 		color = my_tex_color(game->sprite,
-				((i - sprite_x[0]) * 1.0) / (sprite_x[1] - sprite_x[0]),
-				((j - sprite_y[0]) * 1.0) / (sprite_y[1] - sprite_y[0]),
-				((sprite_x[1] - sprite_x[0]) * 3.0 / (WINDOWS_Y)));
+			((i - bbox_x[0]) * 1.0) / (bbox_x[1] - bbox_x[0]),
+			((j - bbox_y[0]) * 1.0) / (bbox_y[1] - bbox_y[0]),
+			((bbox_x[1] - bbox_x[0]) * 3.0 / (WINDOWS_Y)));
 		if (color != 0)
 			my_mlx_pixel_put(&game->windows, i, j, color);
 		j++;
-		if (j >= WINDOWS_Y)
-			j = WINDOWS_Y - 1;
 	}
 }
 
 static void	draw_one_sprite(t_game *game, t_spritedata data)
 {
-	int		sprite_x[2];
+	int		bbox_x[2];
 	int		i;
 
-	sprite_x[0] = data.sprite_x - data.sprite_size / 2;
-	sprite_x[1] = data.sprite_x + data.sprite_size / 2;
-	game->sprites[data.index].alive = (sprite_x[0] < WINDOWS_X
-		/ 2 && sprite_x[1] > WINDOWS_X / 2 && data.resize[1] < 2);
-	if (sprite_x[0] < 0)
-		i = 0;
-	else
-		i = sprite_x[0];
-	while (i <= (sprite_x[1] >= WINDOWS_X ?
-		WINDOWS_X - 1 : sprite_x[1]))
+	bbox_x[0] = data.sprite_x - data.sprite_size / 2;
+	bbox_x[1] = data.sprite_x + data.sprite_size / 2;
+	game->sprites[data.index].alive = bbox_x[0] < WINDOWS_X /
+		2 && bbox_x[1] > WINDOWS_X / 2
+		&& data.resize[1] < 2;
+	i = (bbox_x[0] < 0) ? 0 : bbox_x[0];
+	while (i <= (bbox_x[1] >= WINDOWS_X ?
+		WINDOWS_X - 1 : bbox_x[1]))
 	{
 		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
-			draw_line_sprite(game, data, i, sprite_x);
+			draw_line_sprite(game, data, i, bbox_x);
 		i++;
-		if (i >= WINDOWS_X)
-			i = WINDOWS_X - 1;
 	}
 
 }
