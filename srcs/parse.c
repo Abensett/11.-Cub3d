@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:45:49 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:47:57 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:48:28 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,5 @@ bool	parse_element(t_game *game)
 		x++;
 	}
 	sprites_init(game);
-	printf("%d\n", game->shotornot);
 	return (1);
 }
