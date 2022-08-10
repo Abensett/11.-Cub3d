@@ -6,16 +6,14 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 02:36:47 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:22:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
 
-void	sprite_init(t_game *game, int index, int i, int j)
+static void	sprite_init_pos(t_game *game, int index, int i, int j)
 {
-	printf("%d\n", index);
-
 	game->sprites[index].pos[0] = i;
 	game->sprites[index].pos[1] = j;
 }
@@ -27,7 +25,6 @@ int		sprites_init(t_game *game)
 	int		j;
 	int		index;
 
-	printf("%d\n", game->nb_sprites);
 	if (!(game->sprites = ft_calloc(game->nb_sprites, sizeof(t_sprite))))
 		return (0);
 	index = 0;
@@ -38,10 +35,7 @@ int		sprites_init(t_game *game)
 		while (game->map.map[i][j])
 		{
 			if (game->map.map[i][j] == '2')
-			{
-				printf("%d %d %c\n",i,j, game->map.map[i][j]);
-				sprite_init(game, index++, i, j);
-			}
+				sprite_init_pos(game, index++, i, j);
 			j++;
 		}
 		i++;
