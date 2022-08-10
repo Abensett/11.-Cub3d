@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:32:32 by abensett          #+#    #+#             */
-/*   Updated: 2022/07/26 18:07:07 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:27:42 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ bool	check_move(t_game *game, float tmp_x, float tmp_y)
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == '1')
 		return (0);
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == ' ')
+		return (0);
+	if (game->map.map[(int)tmp_x][(int)tmp_y] == '2')
 		return (0);
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == 0)
 		return (0);
