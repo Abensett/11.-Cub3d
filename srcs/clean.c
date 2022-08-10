@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 09:24:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 09:26:40 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,19 @@ void	clean_img(t_game *game)
 	system("killall -9 vlc");
 	exit (EXIT_SUCCESS);
 }
+int	free_and_destroy2(t_game *game)
+{
+	free(game->depth);
+	free(game->texture.east);
+	free(game->texture.north);
+	free(game->texture.south);
+	free(game->texture.west);
+	ft_free_tab(game->map.map);
+	free(game->mlx.mlx);
+	free(game);
+	system("killall -9 vlc");
+	exit (EXIT_SUCCESS);
+}
 
 // destroy images and windows, free map and texture then game and exit
 int	free_and_destroy(t_game *game)
@@ -73,14 +86,8 @@ int	free_and_destroy(t_game *game)
 	mlx_destroy_image(game->mlx.mlx, game->game_over.img);
 	mlx_destroy_image(game->mlx.mlx, game->sprite.img);
 	mlx_destroy_display(game->mlx.mlx);
-	free(game->depth);
-	free(game->texture.east);
-	free(game->texture.north);
-	free(game->texture.south);
-	free(game->texture.west);
-	ft_free_tab(game->map.map);
-	free(game->mlx.mlx);
-	free(game);
-	system("killall -9 vlc");
-	exit (EXIT_SUCCESS);
+	free(game->sprites);
+	free(game->texture.skys);
+	free(game->texture.floors);
+	free_and_destroy2(game);
 }
