@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 05:09:30 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 05:14:52 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	}
 }
 
-
 static void	draw_one_sprite(t_game *game, t_spritedata data)
 {
 	int		sprite_x[2];
@@ -105,10 +104,11 @@ static void	draw_one_sprite(t_game *game, t_spritedata data)
 			break ;
 	}
 }
+
 void	draw_sprites(t_game *game)
 {
 	t_spritedata	data;
-	double			sprite_pos[2];
+	double			spt_ps[2];
 	double			det;
 
 	distance_sprites(game);
@@ -117,16 +117,16 @@ void	draw_sprites(t_game *game)
 	data.index = 0;
 	while (data.index < game->nb_sprites)
 	{
-		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
-		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
+		spt_ps[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
+		spt_ps[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
 		det = 1.0 / (game->player.plane_x * game->player.dir_y
-			- game->player.dir_x * game->player.plane_y);
-		data.resize[0] = det * (game->player.dir_y * sprite_pos[0]
-			- game->player.dir_x * sprite_pos[1]);
-		data.resize[1] = det * (-game->player.plane_y * sprite_pos[0]
-			+ game->player.plane_x * sprite_pos[1 ]);
-		data.sprite_x = (int)((WINDOWS_X / 2) *
-			(1 + data.resize[0] / data.resize[1]));
+				- game->player.dir_x * game->player.plane_y);
+		data.resize[0] = det * (game->player.dir_y * spt_ps[0]
+				- game->player.dir_x * spt_ps[1]);
+		data.resize[1] = det * (-game->player.plane_y * spt_ps[0]
+				+ game->player.plane_x * spt_ps[1]);
+		data.sprite_x = (int)((WINDOWS_X / 2)
+				* (1 + data.resize[0] / data.resize[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.resize[1]));
 		if (!game->sprites[data.index].dead)
 			draw_one_sprite(game, data);
