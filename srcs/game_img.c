@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 11:35:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:42:17 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	img_addr(t_game *game)
 			&game->floor.byte_p, &game->floor.line_l, &game->floor.end);
 	game->sky.addr = mlx_get_data_addr(game->sky.img,
 			&game->sky.byte_p, &game->sky.line_l, &game->sky.end);
-	game->lifebar.addr = mlx_get_data_addr(game->lifebar.img,
-			&game->lifebar.byte_p, &game->lifebar.line_l, &game->lifebar.end);
 	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
 			&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
 	game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
@@ -69,8 +67,6 @@ void	open_img(t_game *game)
 			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
 	game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
 			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
-	game->lifebar.img = mlx_xpm_file_to_image(game->mlx.mlx,
-			"./img/lifebar.xpm", &game->lifebar.width, &game->lifebar.height);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);
