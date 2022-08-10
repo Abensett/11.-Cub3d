@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:55:32 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:56:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	render_next_frame(t_game *game)
 {
 	raycasting(game);
+	if (game->life <= 0)
+		sleep(7);
 	return (1);
 }
 
@@ -96,7 +98,5 @@ void	game_loop(t_game *game)
 	mlx_hook(game->mlx.windows, 3, 1L << 1, exput, game);
 	mlx_hook(game->mlx.windows, 33, 1l << 5, free_and_destroy, game);
 	mlx_mouse_hook(game->mlx.windows, &ft_handle_mouse, game);
-	if (game->life <= 0)
-		sleep(7);
 	mlx_loop(game->mlx.mlx);
 }
