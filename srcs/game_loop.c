@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 01:34:47 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:26:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,20 @@ int	color_get(t_img *img, int x, int y)
 
 void	ft_handle_shoot(t_game *game)
 {
+	int		i;
 	if (game->bullets >= 0 && game->shotornot < 2) 
 	{
+		i = game->nb_sprites - 1;
+		while (i >= 0)
+		{
+			if (game->sprites[i].killable)
+			{
+				game->sprites[i].destroyed = 1;
+				game->map.map[game->sprites[i].pos[0]][game->sprites[i].pos[1]] = 0;
+				break ;
+			}
+			i--;
+		}
 		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
 		game->bullets--;
 	}
