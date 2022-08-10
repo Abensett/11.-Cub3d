@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:56:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:57:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ int	render_next_frame(t_game *game)
 {
 	raycasting(game);
 	if (game->life <= 0)
-		sleep(7);
+	{
+		sleep(2);
+		free_and_destroy(game);
+	}
 	return (1);
 }
 

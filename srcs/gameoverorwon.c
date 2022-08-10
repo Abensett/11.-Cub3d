@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 03:51:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:56:55 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ void 	check_dead_win(t_game *game)
 		system("cvlc --play-and-exit img/win.mp3 &>/dev/null &");
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 		game->windows.img, 0, 0);
-		sleep(7);
-		free_and_destroy(game);
 	}
 	else
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
