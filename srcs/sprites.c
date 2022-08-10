@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:44:12 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:44:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,6 @@ void	sort_sprites(t_game *game)
 		i++;
 	}
 }
-
-
-
-
 
 void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	int sprite_x[2])
