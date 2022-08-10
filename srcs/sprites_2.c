@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:21:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:21:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,30 +84,30 @@ void	sort_sprites(t_game *game)
 	}
 }
 
-void	draw_line_sprite(t_game *game, t_spritedata data, int i,
-	int bbox_x[2])
-{
-	int		bbox_y[2];
-	int		j;
-	int		color;
+// void	draw_line_sprite(t_game *game, t_spritedata data, int i,
+// 	int bbox_x[2])
+// {
+// 	int		bbox_y[2];
+// 	int		j;
+// 	int		color;
 
-	bbox_y[0] = WINDOWS_Y / 2
-		- data.sprite_size / 2;
-	bbox_y[1] = WINDOWS_Y / 2
-		+ data.sprite_size / 2;
-	j = (bbox_y[0] < 0) ? 0 : bbox_y[0];
-	while (j < (bbox_y[1] >= WINDOWS_Y
-		? WINDOWS_Y - 1 : bbox_y[1]))
-	{
-		color = my_tex_color(game->sprite,
-			((i - bbox_x[0]) * 1.0) / (bbox_x[1] - bbox_x[0]),
-			((j - bbox_y[0]) * 1.0) / (bbox_y[1] - bbox_y[0]),
-			((bbox_x[1] - bbox_x[0]) * 3.0 / (WINDOWS_Y)));
-		if (color != 0)
-			my_mlx_pixel_put(&game->windows, i, j, color);
-		j++;
-	}
-}
+// 	bbox_y[0] = WINDOWS_Y / 2
+// 		- data.sprite_size / 2;
+// 	bbox_y[1] = WINDOWS_Y / 2
+// 		+ data.sprite_size / 2;
+// 	j = (bbox_y[0] < 0) ? 0 : bbox_y[0];
+// 	while (j < (bbox_y[1] >= WINDOWS_Y
+// 		? WINDOWS_Y - 1 : bbox_y[1]))
+// 	{
+// 		color = my_tex_color(game->sprite,
+// 			((i - bbox_x[0]) * 1.0) / (bbox_x[1] - bbox_x[0]),
+// 			((j - bbox_y[0]) * 1.0) / (bbox_y[1] - bbox_y[0]),
+// 			((bbox_x[1] - bbox_x[0]) * 3.0 / (WINDOWS_Y)));
+// 		if (color != 0)
+// 			my_mlx_pixel_put(&game->windows, i, j, color);
+// 		j++;
+// 	}
+// }
 
 void	draw_sprite(t_game *game, t_spritedata data)
 {
@@ -120,7 +120,15 @@ void	draw_sprite(t_game *game, t_spritedata data)
 		2 && bbox_x[1] > WINDOWS_X / 2
 		&& data.transform[1] < 2;
 	i = (bbox_x[0] < 0) ? 0 : bbox_x[0];
+
 }
+	// while (i <= (bbox_x[1] >= WINDOWS_X ?
+	// 	WINDOWS_X - 1 : bbox_x[1]))
+	// {
+	// 	if (data.transform[1] > 0 && data.transform[1] < game->depth[i])
+	// 		draw_line_sprite(game, data, i, bbox_x);
+	// 	i++;
+	// }
 void	draw_sprites(t_game *game)
 {
 	t_spritedata	data;
