@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 05:08:54 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 05:09:16 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,23 +84,25 @@ void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 
 static void	draw_one_sprite(t_game *game, t_spritedata data)
 {
-	int		bbox_x[2];
+	int		sprite_x[2];
 	int		i;
 
-	bbox_x[0] = data.sprite_x - data.sprite_size / 2;
-	bbox_x[1] = data.sprite_x + data.sprite_size / 2;
-	game->sprites[data.index].alive = bbox_x[0] < WINDOWS_X /
-		2 && bbox_x[1] > WINDOWS_X / 2
-		&& data.resize[1] < 2;
-	i = (bbox_x[0] < 0) ? 0 : bbox_x[0];
-	while (i <= (bbox_x[1] >= WINDOWS_X ?
-		WINDOWS_X - 1 : bbox_x[1]))
+	sprite_x[0] = data.sprite_x - data.sprite_size / 2;
+	sprite_x[1] = data.sprite_x + data.sprite_size / 2;
+	game->sprites[data.index].alive = (sprite_x[0] < WINDOWS_X
+			/ 2 && sprite_x[1] > WINDOWS_X / 2 && data.resize[1] < 2);
+	if (sprite_x[0] < 0)
+		i = 0;
+	else
+		i = sprite_x[0];
+	while (i <= sprite_x[0])
 	{
 		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
-			draw_line_sprite(game, data, i, bbox_x);
+			draw_line_sprite(game, data, i, sprite_x);
 		i++;
+		if (i >= WINDOWS_X)
+			break ;
 	}
-
 }
 
 void	draw_sprites(t_game *game)
