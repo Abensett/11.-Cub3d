@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:53:55 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:55:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	draw_sprites(t_game *game)
 	compute_distances(game);
 	sort_sprites(game);
 	data.index = -1;
-	while (++data.index < game->nb_sprites)
+	while (data.index =< game->nb_sprites)
 	{
 		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5
 			- game->player.pos_x;
