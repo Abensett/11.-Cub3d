@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 09:23:05 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 09:24:08 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	free_and_destroy(t_game *game)
 	mlx_destroy_image(game->mlx.mlx, game->game_over.img);
 	mlx_destroy_image(game->mlx.mlx, game->sprite.img);
 	mlx_destroy_display(game->mlx.mlx);
+	free(game->depth);
 	free(game->texture.east);
 	free(game->texture.north);
 	free(game->texture.south);
