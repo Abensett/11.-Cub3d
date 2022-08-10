@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:50 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 04:19:27 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:30:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	put_tex(t_game *game, int x)
 			img_pix_get(&game->north, game->ray.tex_x, game->ray.tex_y));
 	else if (game->ray.side == 0 && game->ray.map_x <= game->player.pos_x)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
-				img_pix_get(&game->south, game->ray.tex_x, game->ray.tex_y));
+			img_pix_get(&game->south, game->ray.tex_x, game->ray.tex_y));
 	else if (game->ray.side == 1 && game->ray.map_y <= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
-				img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y));
+			img_pix_get(&game->west, game->ray.tex_x, game->ray.tex_y));
 	else if (game->ray.side == 1 && game->ray.map_y >= game->player.pos_y)
 		my_mlx_pixel_put(&game->windows, x, game->ray.draw_start,
 			img_pix_get(&game->east, game->ray.tex_x, game->ray.tex_y));

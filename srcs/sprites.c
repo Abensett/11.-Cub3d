@@ -6,42 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:26:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:30:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
-
-static void	sprite_init_pos(t_game *game, int index, int i, int j)
-{
-	game->sprites[index].pos[0] = i;
-	game->sprites[index].pos[1] = j;
-}
-
-
-int		sprites_init(t_game *game)
-{
-	int		i;
-	int		j;
-	int		index;
-
-	if (!(game->sprites = ft_calloc(game->nb_sprites, sizeof(t_sprite))))
-		return (0);
-	index = 0;
-	i = 0;
-	while (game->map.map[i])
-	{
-		j = 0;
-		while (game->map.map[i][j])
-		{
-			if (game->map.map[i][j] == '2')
-				sprite_init_pos(game, index++, i, j);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
 
 void	compute_distances(t_game *game)
 {
