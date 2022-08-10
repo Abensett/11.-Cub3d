@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:24:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:25:34 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ staticvoid	draw_one_sprite(t_game *game, t_spritedata data)
 	while (i <= (bbox_x[1] >= WINDOWS_X ?
 		WINDOWS_X - 1 : bbox_x[1]))
 	{
-		if (data.transform[1] > 0 && data.transform[1] < game->depth[i])
+		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
 			draw_line_sprite(game, data, i, bbox_x);
 		i++;
 	}
