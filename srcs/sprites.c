@@ -6,13 +6,13 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 05:07:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 05:08:35 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cub3D.h"
 
-void	compute_distances(t_game *game)
+void	distance_sprites(t_game *game)
 {
 	int	i;
 
@@ -52,6 +52,7 @@ void	sort_sprites(t_game *game)
 		i++;
 	}
 }
+
 
 void	draw_line_sprite(t_game *game, t_spritedata data, int i,
 	int bbox_x[2])
@@ -105,7 +106,7 @@ void	draw_sprites(t_game *game)
 	double			sprite_pos[2];
 	double			det;
 
-	compute_distances(game);
+	distance_sprites(game);
 	sort_sprites(game);
 	load_texture(game, &game->sprite, "./img/sheep.xpm");
 	data.index = 0;
