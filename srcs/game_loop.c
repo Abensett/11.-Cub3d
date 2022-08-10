@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:49:14 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:52:01 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,6 @@ void	game_loop(t_game *game)
 	mlx_hook(game->mlx.windows, 33, 1l << 5, free_and_destroy, game);
 	mlx_mouse_hook(game->mlx.windows, &ft_handle_mouse, game);
 	mlx_loop(game->mlx.mlx);
+	if (game->life <= 0)
+		sleep(7);
 }
