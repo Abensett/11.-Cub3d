@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:49:08 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 09:29:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 09:30:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	free_and_destroy(t_game *game)
 {
 	int i;
 	
-	i= = 0; 
+	i = 0; 
 	mlx_destroy_image(game->mlx.mlx, game->north.img);
 	mlx_destroy_image(game->mlx.mlx, game->south.img);
 	mlx_destroy_image(game->mlx.mlx, game->west.img);
