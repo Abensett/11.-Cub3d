@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:35:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 04:40:27 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ void	write_on_screen(t_game *game, char *text, int pos[2], int color)
 // check if the game is won or not
 void	check_dead_win(t_game *game)
 {
-	load_texture(game, &game->game_over, "./img/gameover.xpm");
 	if (game->life < 0)
 	{
+		system("killall -9 vlc");
 		if (game->life <= -70)
 		{
 			system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
 			sleep(7);
 			free_and_destroy(game);
 		}
-		system("killall -9 vlc");
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
 			game->game_over.img, 0, -150);
 		game->life = -70;
