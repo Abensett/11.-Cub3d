@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:42:07 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 09:32:08 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 09:32:20 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ void	parse_map(t_game *game)
 	}
 	game->texture.skys = ft_strdup("./img/sky.xpm");
 	game->texture.floors = ft_strdup("./img/floor.xpm");
-	load_texture(game, &game->sprite, "./img/sheep.xpm");
 	game->depth = ft_calloc(WINDOWS_X, sizeof(double));
 	if (game->depth == 0)
 		exit(1);
