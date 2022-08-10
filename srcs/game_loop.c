@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 02:26:26 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:33:44 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	ft_handle_shoot(t_game *game)
 		i = game->nb_sprites - 1;
 		while (i >= 0)
 		{
-			if (game->sprites[i].killable)
+			if (game->sprites[i].alive)
 			{
-				game->sprites[i].destroyed = 1;
+				game->sprites[i].alive = 0;
 				game->map.map[game->sprites[i].pos[0]][game->sprites[i].pos[1]] = 0;
 				break ;
 			}

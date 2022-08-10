@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 01:58:17 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 01:55:23 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:34:28 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	compute_distances(t_game *game)
 		game->sprites[i].distance =
 			pow(game->player.pos_x - game->sprites[i].pos[0], 2)
 			+ pow(game->player.pos_y - game->sprites[i].pos[1], 2);
-		if (!game->sprites[i].destroyed)
+		if (!game->sprites[i].alive)
 			game->won = 0;
 		i++;
 	}
@@ -122,7 +122,7 @@ void	draw_sprite(t_game *game, t_spritedata data)
 
 	bbox_x[0] = data.sprite_x - data.sprite_size / 2;
 	bbox_x[1] = data.sprite_x + data.sprite_size / 2;
-	game->sprites[data.index].killable = bbox_x[0] < WINDOWS_X /
+	game->sprites[data.index].alive = bbox_x[0] < WINDOWS_X /
 		2 && bbox_x[1] > WINDOWS_X / 2
 		&& data.transform[1] < 2;
 	i = (bbox_x[0] < 0) ? 0 : bbox_x[0];
@@ -158,7 +158,7 @@ void	draw_sprites(t_game *game)
 		data.sprite_x = (int)((WINDOWS_X / 2) *
 			(1 + data.transform[0] / data.transform[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.transform[1]));
-		if (!game->sprites[data.index].destroyed)
+		if (!game->sprites[data.index].alive)
 			draw_sprite(game, data);
 		data.index++;
 	}
