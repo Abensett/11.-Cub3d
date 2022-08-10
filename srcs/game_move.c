@@ -102,7 +102,7 @@ void	rotate_right(t_game *game)
 	double	olddir_x;
 	double	oldplane_x;
 
-	rot_speed = 0.02;
+	rot_speed = 0.05;
 	olddir_x = game->player.dir_x;
 	oldplane_x = game->player.plane_x;
 	game->player.dir_x = game->player.dir_x * cos(-rot_speed)
