@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:07:55 by flee              #+#    #+#             */
-/*   Updated: 2022/08/08 10:23:36 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 02:17:54 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ bool	check_void(t_game *game)
 	return (1);
 }
 
+// infos about Minimap, life, bullets
 void	infos(t_game *game)
 {
 	char*	bullets;
