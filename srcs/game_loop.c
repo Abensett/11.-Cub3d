@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 02:43:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:15:07 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ void	ft_handle_shoot(t_game *game)
 	int		i;
 	if (game->bullets >= 0 && game->shotornot < 2) 
 	{
-		i = game->nb_sprites - 1;
-		while (i >= 0)
+		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
+		game->bullets--;
+	}
+	else
+		system("cvlc --play-and-exit img/knife.mp3 &>/dev/null &");
+	i = game->nb_sprites - 1;
+		while (i > 0)
 		{
 			if (game->sprites[i].alive)
 			{
@@ -44,12 +49,6 @@ void	ft_handle_shoot(t_game *game)
 			}
 			i--;
 		}
-		system("cvlc --play-and-exit img/gun_shot2.mp3 &>/dev/null &");
-		game->bullets--;
-	}
-	else
-		system("cvlc --play-and-exit img/knife.mp3 &>/dev/null &");
-
 	game->shotornot++;
 }
 
