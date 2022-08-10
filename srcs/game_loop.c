@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:54:15 by flee              #+#    #+#             */
-/*   Updated: 2022/08/10 03:52:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 03:52:58 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ void	game_loop(t_game *game)
 	game->mlx.windows = mlx_new_window(game->mlx.mlx,
 			WINDOWS_X, WINDOWS_Y, "Cub3d bonus");
 	open_img(game);
-	if (game->life <= 0)
-		sleep(7);
 	mlx_loop_hook(game->mlx.mlx, &render_next_frame, game);
 	mlx_hook(game->mlx.windows, 2, 1L << 0, input, game);
 	mlx_hook(game->mlx.windows, 3, 1L << 1, exput, game);
