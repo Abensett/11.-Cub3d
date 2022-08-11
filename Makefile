@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= Cub3d
+NAME= cub3D
 
 SRCS= main.c get_file.c parse.c square_map.c game_loop.c game_img.c game_raycasting.c \
 		game_display.c game_move.c game_move2.c parse_wall.c parse_map.c game_utils.c game_utils2.c clean.c
