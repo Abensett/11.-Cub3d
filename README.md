@@ -72,5 +72,3 @@ séparées par un ou plusieurs espace(s).
 
 * https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW
 * https://permadi.com/1996/05/ray-casting-tutorial-1/#A%20BRIEF%20HISTORY
-* Explications claires : https://www.youtube.com/watch?v=gYRrGTC7GtA
-* Exemples minilib : https://github.com/terry-yes/mlx_example

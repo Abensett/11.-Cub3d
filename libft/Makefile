@@ -6,7 +6,7 @@
 #    By: flee <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/08 14:35:23 by flee              #+#    #+#              #
-#    Updated: 2021/06/27 10:14:28 by flee             ###   ########.fr        #
+#    Updated: 2022/08/10 10:23:20 by flee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ SRC =	ft_atoi.c \
 		ft_size.c \
 		get_next_line.c \
 		get_next_line_utils.c \
-		ft_popTab.c
+		ft_poptab.c
 
 
 SRCBONUS =	ft_lstnew.c \

@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:32:32 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/07 21:33:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:36:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
 bool	check_move(t_game *game, float tmp_x, float tmp_y)
 {
@@ -18,6 +18,12 @@ bool	check_move(t_game *game, float tmp_x, float tmp_y)
 		return (0);
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == ' ')
 		return (0);
+	if (game->map.map[(int)tmp_x][(int)tmp_y] == '2')
+	{
+		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
+		game->life -= 33;
+		return (0);
+	}
 	if (game->map.map[(int)tmp_x][(int)tmp_y] == 0)
 		return (0);
 	return (1);
@@ -71,6 +77,7 @@ bool	line_is_empty(char *str)
 	return (1);
 }
 
+/* check that RGB info are between 0 et 255 */
 bool	check_info(t_game *game)
 {
 	int	i;

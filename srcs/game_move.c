@@ -17,19 +17,12 @@ void	move_up(t_game *game)
 	int	tmp_x;
 	int	tmp_y;
 
-	tmp_x = game->player.pos_x + game->player.dir_x * game->speed;
-	tmp_y = game->player.pos_y + game->player.dir_y * game->speed;
+	tmp_x = game->player.pos_x + game->player.dir_x * 0.2;
+	tmp_y = game->player.pos_y + game->player.dir_y * 0.2;
 	if (check_move(game, tmp_x, tmp_y))
 	{
-		game->player.pos_x += game->player.dir_x * game->speed;
-		game->player.pos_y += game->player.dir_y * game->speed;
-	}
-	else
-	{
-		game->life -= 100 * game->speed;
-		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
-		game->player.pos_x -= game->player.dir_x * game->speed * 5;
-		game->player.pos_y -= game->player.dir_y * game->speed * 5;
+		game->player.pos_x += game->player.dir_x * 0.02;
+		game->player.pos_y += game->player.dir_y * 0.02;
 	}
 }
 
@@ -38,19 +31,12 @@ void	move_right(t_game *game)
 	int	tmp_x;
 	int	tmp_y;
 
-	tmp_x = game->player.pos_x + game->player.dir_y * game->speed;
-	tmp_y = game->player.pos_y - game->player.dir_x * game->speed;
+	tmp_x = game->player.pos_x + game->player.dir_y * 0.2;
+	tmp_y = game->player.pos_y - game->player.dir_x * 0.2;
 	if (check_move(game, tmp_x, tmp_y))
 	{
-		game->player.pos_x += game->player.dir_y * game->speed;
-		game->player.pos_y -= game->player.dir_x * game->speed;
-	}
-	else
-	{
-		game->life -= 100 * game->speed;
-		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
-		game->player.pos_x -= game->player.dir_y * game->speed * 5;
-		game->player.pos_y += game->player.dir_x * game->speed * 5;
+		game->player.pos_x += game->player.dir_y * 0.02;
+		game->player.pos_y -= game->player.dir_x * 0.02;
 	}
 }
 
@@ -59,19 +45,12 @@ void	move_left(t_game *game)
 	int	tmp_x;
 	int	tmp_y;
 
-	tmp_x = game->player.pos_x - game->player.dir_y * game->speed;
-	tmp_y = game->player.pos_y + game->player.dir_x * game->speed;
+	tmp_x = game->player.pos_x - game->player.dir_y * 0.2;
+	tmp_y = game->player.pos_y + game->player.dir_x * 0.2;
 	if (check_move(game, tmp_x, tmp_y))
 	{
-		game->player.pos_x -= game->player.dir_y * game->speed;
-		game->player.pos_y += game->player.dir_x * game->speed;
-	}
-	else
-	{
-		game->life -= 100 * game->speed;
-		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
-		game->player.pos_x += game->player.dir_y * game->speed * 5;
-		game->player.pos_y -= game->player.dir_x * game->speed * 5;
+		game->player.pos_x -= game->player.dir_y * 0.02;
+		game->player.pos_y += game->player.dir_x * 0.02;
 	}
 }
 
@@ -80,19 +59,12 @@ void	move_down(t_game *game)
 	int	tmp_x;
 	int	tmp_y;
 
-	tmp_x = game->player.pos_x - game->player.dir_x * game->speed;
-	tmp_y = game->player.pos_y - game->player.dir_y * game->speed;
+	tmp_x = game->player.pos_x - game->player.dir_x * 0.2;
+	tmp_y = game->player.pos_y - game->player.dir_y * 0.2;
 	if (check_move(game, tmp_x, tmp_y))
 	{
-		game->player.pos_x -= game->player.dir_x * game->speed;
-		game->player.pos_y -= game->player.dir_y * game->speed;
-	}
-	else
-	{
-		game->life -= 100 * game->speed;
-		system("cvlc --play-and-exit img/hurt.mp3 &>/dev/null &");
-		game->player.pos_x += game->player.dir_x * game->speed;
-		game->player.pos_y += game->player.dir_y * game->speed;
+		game->player.pos_x -= game->player.dir_x * 0.02;
+		game->player.pos_y -= game->player.dir_y * 0.02;
 	}
 }
 
@@ -102,7 +74,7 @@ void	rotate_right(t_game *game)
 	double	olddir_x;
 	double	oldplane_x;
 
-	rot_speed = 0.05;
+	rot_speed = 0.02;
 	olddir_x = game->player.dir_x;
 	oldplane_x = game->player.plane_x;
 	game->player.dir_x = game->player.dir_x * cos(-rot_speed)

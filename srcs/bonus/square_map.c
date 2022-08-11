@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:42:48 by flee              #+#    #+#             */
-/*   Updated: 2022/06/19 19:47:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:36:47 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
 // copy src into dst
 char	*cpy(char *dest, char *src)

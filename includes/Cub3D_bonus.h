@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cub3D.h                                            :+:      :+:    :+:   */
+/*   Cub3D_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:09 by flee              #+#    #+#             */
-/*   Updated: 2022/06/19 21:27:11 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:19:42 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -22,7 +22,6 @@
 # include <math.h>
 # include "libft.h"
 # include "mlx.h"
-
 # define WINDOWS_X 	1500
 # define WINDOWS_Y 	1000
 # define TEX_SIZE	64
@@ -67,6 +66,19 @@ typedef struct s_ray
 	int		tex_x;
 	int		tex_y;
 	double	tex_pos;
+	float	ray_dir_x0;
+	float	ray_dir_x1;
+	float	ray_dir_y0;
+	float	ray_dir_y1;
+	int		position;
+	float	pos_z;
+	float	row_distance;
+	float	floor_step_x;
+	float	floor_step_y;
+	float	floor_x;
+	float	floor_y;
+	int		cell_x;
+	int		cell_y;
 }	t_ray;
 
 /*********************************************************************
@@ -79,11 +91,9 @@ typedef struct s_map
 }	t_map;
 
 /*********************************************************************
-- pox_X,pos_Y  = player position
-- dir_x, dir_y = direction vector
-- pa 		   =
-- plane_x, y   =  2nd raycaster version of camera plane
-- map_x, map_y = the current square of the map the ray is in
+- * north = north texture
+- floor[3] = RGB of the color of the floor
+- sky [3] =  RGB of the color of the ceiling
  *********************************************************************/
 typedef struct s_texture
 {
@@ -91,6 +101,8 @@ typedef struct s_texture
 	char	*south;
 	char	*west;
 	char	*east;
+	char	*skys;
+	char	*floors;
 	int		floor[3];
 	int		f_rgb;
 	int		sky[3];
@@ -117,6 +129,9 @@ typedef struct s_player
 	int		map_y;
 }	t_player;
 
+/***********************************************************************
+ - mlx structure
+ ************************************************************************/
 typedef struct s_mlx
 {
 	void	*mlx;
@@ -132,10 +147,36 @@ typedef struct s_img
 	int		byte_p;
 	int		line_l;
 	int		end;
+	int		width;
+	int		height;
 }	t_img;
+
+typedef struct s_sprite
+{
+	int		pos[2];
+	double	distance;
+	int		alive;
+	int		dead;
+	t_img	texture;
+}					t_sprite;
+
+typedef struct s_spritedata
+{
+	double	resize[2];
+	int		sprite_x;
+	int		sprite_size;
+	int		index;
+}					t_spritedata;
 
 typedef struct s_game
 {
+	int			won;
+	int			life;
+	int			bullets;
+	float		speed;
+	int			gun_shift;
+	int			gun_dir;
+	int			shotornot;
 	t_mlx		mlx;
 	t_map		map;
 	t_texture	texture;
@@ -144,8 +185,16 @@ typedef struct s_game
 	t_img		north;
 	t_img		south;
 	t_img		west;
+	t_img		sky;
+	t_img		floor;
 	t_img		east;
 	t_ray		ray;
+	t_img		game_over;
+	t_img		gun[4];
+	t_img		sprite;
+	int			nb_sprites;
+	t_sprite	*sprites;
+	double		*depth;
 }	t_game;
 
 void			get_file(char *map, t_game *game);
@@ -170,7 +219,6 @@ void			free_parse(t_game *game);
 char			*whitespace(char *str);
 bool			str_is_digit(char **str);
 bool			line_is_empty(char *str);
-bool			line_is_empty2(char *str);
 bool			check_info(t_game *game);
 bool			check_void(t_game *game);
 void			clean_img(t_game *game);
@@ -185,4 +233,19 @@ void			rotate_left(t_game *game);
 int				input(int key, t_game *game);
 bool			check_move(t_game *game, float tmp_x, float tmp_y);
 
+// BONUS
+int				exput(int key, t_game *game);
+void			draw_mini_map(t_game *game, int color);
+void			draw_sky(t_game *game, int y);
+void			ft_life_bar(t_game *game);
+void			ft_gun(t_game *game);
+void			ft_handle_shoot(t_game *game);
+void			write_on_screen(t_game *game, char *text, int pos[2],
+					int color);
+int				load_texture(t_game *game, t_img *texture, char *filename);
+int				my_tex_color(t_img tex, double u, double v, double shadow);
+void			check_dead_win(t_game *game);
+void			infos(t_game *game);
+int				sprites_init(t_game *game);
+void			draw_sprites(t_game *game);
 #endif

@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:17:01 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:10:52 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:35:57 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
 int	create_rgb(int r, int g, int b)
 {
@@ -27,15 +27,27 @@ void	img_addr(t_game *game)
 			&game->south.byte_p, &game->south.line_l, &game->south.end);
 	game->west.addr = mlx_get_data_addr(game->west.img,
 			&game->west.byte_p, &game->west.line_l, &game->west.end);
+	game->floor.addr = mlx_get_data_addr(game->floor.img,
+			&game->floor.byte_p, &game->floor.line_l, &game->floor.end);
+	game->sky.addr = mlx_get_data_addr(game->sky.img,
+			&game->sky.byte_p, &game->sky.line_l, &game->sky.end);
+	game->gun[0].addr = mlx_get_data_addr(game->gun[0].img,
+			&game->gun[0].byte_p, &game->gun[0].line_l, &game->gun[0].end);
+	game->gun[1].addr = mlx_get_data_addr(game->gun[1].img,
+			&game->gun[1].byte_p, &game->gun[1].line_l, &game->gun[1].end);
 	game->windows.addr = mlx_get_data_addr(game->windows.img,
 			&game->windows.byte_p, &game->windows.line_l, &game->windows.end);
 }
 
 void	check_img(t_game *game)
 {
+	load_texture(game, &game->gun[2], "./img/knife.xpm");
+	load_texture(game, &game->gun[3], "./img/knife_2.xpm");
+	load_texture(game, &game->game_over, "./img/gameover.xpm");
+	load_texture(game, &game->sprite, "./img/sheep.xpm");
 	if (!game->north.img || !game->east.img)
 		clean_img(game);
-	else if (!game->south.img || !game->west.img || !game->windows.img)
+	if (!game->south.img || !game->west.img || !game->windows.img)
 		clean_img(game);
 }
 
@@ -49,6 +61,14 @@ void	open_img(t_game *game)
 			game->texture.south, &game->south.byte_p, &game->south.line_l);
 	game->west.img = mlx_xpm_file_to_image(game->mlx.mlx,
 			game->texture.west, &game->west.byte_p, &game->west.line_l);
+	game->sky.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.skys, &game->sky.byte_p, &game->sky.line_l);
+	game->floor.img = mlx_xpm_file_to_image(game->mlx.mlx,
+			game->texture.floors, &game->floor.byte_p, &game->floor.line_l);
+	game->gun[0].img = mlx_xpm_file_to_image(game->mlx.mlx,
+			"./img/gun.xpm", &game->gun[0].width, &game->gun[0].height);
+	game->gun[1].img = mlx_xpm_file_to_image(game->mlx.mlx,
+			"./img/gun_2.xpm", &game->gun[1].width, &game->gun[1].height);
 	game->windows.img = mlx_new_image(game->mlx.mlx, WINDOWS_X, WINDOWS_Y);
 	check_img(game);
 	img_addr(game);

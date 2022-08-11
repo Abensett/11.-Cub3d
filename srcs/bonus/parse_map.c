@@ -6,12 +6,13 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:42:07 by flee              #+#    #+#             */
-/*   Updated: 2022/06/19 19:47:44 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:37:02 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
+/* store the RGB values */
 void	set_background(int bck, t_game *game, char **rgb)
 {
 	if (ft_size(rgb) == 3 && str_is_digit(rgb))
@@ -31,6 +32,7 @@ void	set_background(int bck, t_game *game, char **rgb)
 	}
 }
 
+/* store floor and ceilling RGB in structure, if not found  return 0 */
 int	search_bck(t_game *game, char *str)
 {
 	char	**line;
@@ -52,6 +54,7 @@ int	search_bck(t_game *game, char *str)
 	return (ft_free_tab(line), ft_free_tab(rgb), (1));
 }
 
+/* store texture in structure, if not found returns 0 */
 int	search_id(t_game *game, char *str)
 {
 	char	**line;
@@ -60,21 +63,17 @@ int	search_id(t_game *game, char *str)
 	line = ft_split(str, ' ');
 	if ((ft_size(line)) != 2)
 		return ((ft_free_tab(line)), (0));
-	if ((ft_strncmp(line[0], "N", ft_strlen(line[0])) == 0
-			|| ft_strncmp(line[0], "NO", ft_strlen(line[0])) == 0)
-		&& !game->texture.north)
+	if (ft_strncmp(line[0], "N", ft_strlen(line[0])) == 0
+		|| ft_strncmp(line[0], "NO", ft_strlen(line[0])) == 0)
 		game->texture.north = ft_strdup(line[1]);
-	else if ((ft_strncmp(line[0], "S", ft_strlen(line[0])) == 0
-			|| ft_strncmp(line[0], "SO", ft_strlen(line[0])) == 0)
-		&& !game->texture.south)
+	else if (ft_strncmp(line[0], "S", ft_strlen(line[0])) == 0
+		|| ft_strncmp(line[0], "SO", ft_strlen(line[0])) == 0)
 		game->texture.south = ft_strdup(line[1]);
-	else if ((ft_strncmp(line[0], "W", ft_strlen(line[0])) == 0
-			|| ft_strncmp(line[0], "WE", ft_strlen(line[0])) == 0)
-		&& !game->texture.west)
+	else if (ft_strncmp(line[0], "W", ft_strlen(line[0])) == 0
+		|| ft_strncmp(line[0], "WE", ft_strlen(line[0])) == 0)
 		game->texture.west = ft_strdup(line[1]);
-	else if ((ft_strncmp(line[0], "E", ft_strlen(line[0])) == 0
-			|| ft_strncmp(line[0], "EA", ft_strlen(line[0])) == 0)
-		&& !game->texture.east)
+	else if (ft_strncmp(line[0], "E", ft_strlen(line[0])) == 0
+		|| ft_strncmp(line[0], "EA", ft_strlen(line[0])) == 0)
 		game->texture.east = ft_strdup(line[1]);
 	else
 		return ((ft_free_tab(line)), (0));
@@ -93,17 +92,15 @@ bool	parse_texture(t_game *game)
 	{
 		if (search_id(game, game->map.map[i]))
 			ctrl++;
-		else if (search_bck(game, game->map.map[i]))
+		if (search_bck(game, game->map.map[i]))
 			ctrl++;
-		else if (!line_is_empty2(game->map.map[i]))
-			return (0);
 		i++;
 	}
 	if (ctrl != 7 || i == ft_size(game->map.map))
 		return (0);
 	while (line_is_empty(game->map.map[i]) && (i + 1) < ft_size(game->map.map))
 		i++;
-	if (ft_size(game->map.map) != (i + 1))
+	if ((ft_size(game->map.map) != i))
 	{
 		game->map.map = ft_poptab(game->map.map, i);
 		return (1);
@@ -112,7 +109,8 @@ bool	parse_texture(t_game *game)
 }
 
 /* initianalize textures, extract and check textures and RGB for floor
-	and ceiling */
+	and ceiling
+	check_info -> check RGB values*/
 void	parse_map(t_game *game)
 {
 	game->texture.floor[0] = -1;
@@ -127,9 +125,16 @@ void	parse_map(t_game *game)
 	game->texture.south = NULL;
 	game->texture.north = NULL;
 	game->texture.west = NULL;
+	game->texture.skys = NULL;
+	game->texture.floors = NULL;
 	if (!parse_texture(game) || !check_info(game))
 	{
 		free_parse(game);
 		return (printf("Problem in description\n"), exit (0));
 	}
+	game->texture.skys = ft_strdup("./img/sky.xpm");
+	game->texture.floors = ft_strdup("./img/floor.xpm");
+	game->depth = ft_calloc(WINDOWS_X, sizeof(double));
+	if (game->depth == 0)
+		exit(1);
 }

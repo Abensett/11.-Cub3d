@@ -6,7 +6,7 @@
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:27:39 by flee              #+#    #+#             */
-/*   Updated: 2022/05/05 11:27:40 by flee             ###   ########.fr       */
+/*   Updated: 2022/08/10 10:20:12 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_size(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (tab)
 	{
-		while(tab[i] != NULL)
+		while (tab[i] != NULL)
 			i++;
 	}
-	return (i); 
+	return (i);
 }

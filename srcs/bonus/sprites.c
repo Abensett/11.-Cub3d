@@ -1,63 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gameoverorwon.c                                    :+:      :+:    :+:   */
+/*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 00:05:30 by abensett          #+#    #+#             */
-/*   Updated: 2022/08/10 04:54:48 by abensett         ###   ########.fr       */
+/*   Created: 2022/08/03 16:36:38 by abensett          #+#    #+#             */
+/*   Updated: 2022/08/10 11:36:43 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
-// write the text at pos[2] with color
-void	write_on_screen(t_game *game, char *text, int pos[2], int color)
-{
-	int		x;
-	int		y;
-
-	x = pos[0] - ft_strlen(text) * 5;
-	y = pos[1];
-	mlx_string_put(game->mlx.mlx, game->mlx.windows, x, y, color, text);
-}
-
-// check if the game is won or not
-void	check_dead_win(t_game *game)
-{
-	if (game->life < 0)
-	{
-		system("killall -9 vlc");
-		if (game->life <= -70)
-		{
-			system("cvlc --play-and-exit img/lost.mp3 &>/dev/null &");
-			sleep(7);
-			free_and_destroy(game);
-		}
-		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-			game->game_over.img, 0, -150);
-		game->life = -70;
-	}
-	else if (game->won)
-	{
-		system("killall -9 vlc");
-		system("cvlc --play-and-exit img/win.mp3 &>/dev/null &");
-		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-			game->windows.img, 0, 0);
-		sleep(7);
-		free_and_destroy(game);
-	}
-	else
-		mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-			game->windows.img, 0, 0);
-}
-
-/*
-
-#include "Cub3D.h"
-
-void	compute_distances(t_game *game)
+void	distance_sprites(t_game *game)
 {
 	int	i;
 
@@ -140,7 +95,7 @@ static void	draw_one_sprite(t_game *game, t_spritedata data)
 		i = 0;
 	else
 		i = sprite_x[0];
-	while (i <= sprite_x[0])
+	while (i <= sprite_x[1])
 	{
 		if (data.resize[1] > 0 && data.resize[1] < game->depth[i])
 			draw_line_sprite(game, data, i, sprite_x);
@@ -153,29 +108,27 @@ static void	draw_one_sprite(t_game *game, t_spritedata data)
 void	draw_sprites(t_game *game)
 {
 	t_spritedata	data;
-	double			sprite_pos[2];
+	double			spt_ps[2];
 	double			det;
 
-	compute_distances(game);
+	distance_sprites(game);
 	sort_sprites(game);
-	data.index = -1;
-	while (++data.index < game->nb_sprites)
+	data.index = 0;
+	while (data.index < game->nb_sprites)
 	{
-		sprite_pos[0] = game->sprites[data.index].pos[0] + 0.5
-			- game->player.pos_x;
-		sprite_pos[1] = game->sprites[data.index].pos[1] + 0.5
-			- game->player.pos_y;
+		spt_ps[0] = game->sprites[data.index].pos[0] + 0.5 - game->player.pos_x;
+		spt_ps[1] = game->sprites[data.index].pos[1] + 0.5 - game->player.pos_y;
 		det = 1.0 / (game->player.plane_x * game->player.dir_y
 				- game->player.dir_x * game->player.plane_y);
-		data.resize[0] = det * (game->player.dir_y * sprite_pos[0]
-				- game->player.dir_x * sprite_pos[1]);
-		data.resize[1] = det * (-game->player.plane_y * sprite_pos[0]
-				+ game->player.plane_x * sprite_pos[1]);
+		data.resize[0] = det * (game->player.dir_y * spt_ps[0]
+				- game->player.dir_x * spt_ps[1]);
+		data.resize[1] = det * (-game->player.plane_y * spt_ps[0]
+				+ game->player.plane_x * spt_ps[1]);
 		data.sprite_x = (int)((WINDOWS_X / 2)
 				* (1 + data.resize[0] / data.resize[1]));
 		data.sprite_size = abs((int)(WINDOWS_Y / data.resize[1]));
 		if (!game->sprites[data.index].dead)
 			draw_one_sprite(game, data);
+		data.index++;
 	}
 }
-*/

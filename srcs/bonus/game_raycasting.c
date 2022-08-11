@@ -6,11 +6,11 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:28:37 by flee              #+#    #+#             */
-/*   Updated: 2022/06/07 21:30:56 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:36:09 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
 void	ray_init(t_game *game, int x)
 {
@@ -124,14 +124,22 @@ void	raycasting(t_game *game)
 	int	x;
 
 	x = 0;
+	while (x < WINDOWS_Y)
+		draw_sky(game, x++);
+	x = 0;
 	while (x < WINDOWS_X)
 	{
 		ray_init(game, x);
 		ray_side_dist(game);
 		ray_hit(game);
 		ray_draw(game);
-		verline(game, x++, 0);
+		verline(game, x, 0);
+		game->depth[x++] = game->ray.perp_wall_dist;
 	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.windows,
-		game->windows.img, 0, 0);
+	draw_sprites(game);
+	draw_mini_map(game, 0);
+	ft_life_bar(game);
+	ft_gun(game);
+	check_dead_win(game);
+	infos(game);
 }

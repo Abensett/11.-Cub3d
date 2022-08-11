@@ -6,13 +6,12 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:41:24 by flee              #+#    #+#             */
-/*   Updated: 2022/06/19 19:48:49 by abensett         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:36:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "Cub3D_bonus.h"
 
-// check if the 0 is near to void
 bool	wall(char **map, int x, int y)
 {
 	if (map[x + 1][y] == ' ' || map[x - 1][y] == ' ' ||
@@ -60,7 +59,7 @@ bool	check_side2(t_game *game, int x)
 	return (1);
 }
 
-// check that the side are walls 1
+// check that the side are walls
 bool	check_side(t_game *game)
 {
 	int	x;
@@ -87,7 +86,7 @@ bool	check_side(t_game *game)
 	return (1);
 }
 
-// check if the walls are valid, position of the player
+/* check if the walls, position of the player are valid */
 void	parse_wall(t_game *game)
 {
 	if (!parse_element(game))
