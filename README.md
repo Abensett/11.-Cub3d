@@ -75,14 +75,15 @@ séparées par un ou plusieurs espace(s).
 </details>
  
 ## Final result
-![![Cub3d_2](https://user-images.githubusercontent.com/85625233/184053504-679be682-f535-4abf-9b73-a369830fccb2.gif)
-firstcub3d](https://user-images.githubusercontent.com/85625233/184053452-b2e5b062-5684-4e50-af1e-c214ed3eeeb6.gif)
 
+![1](https://user-images.githubusercontent.com/85625233/184053891-376e6b61-5319-4a0c-a7d0-cf53d026dcc9.gif)
+![2](https://user-images.githubusercontent.com/85625233/184053924-2359497a-05e8-4735-9366-8fb0dd9cfd07.gif)
 
-## Sitographie
+## Sitographie!
 
 * https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW
 * https://permadi.com/1996/05/ray-casting-tutorial-1/#A%20BRIEF%20HISTORY
+
 
 ## 42 Project 121/100
 
