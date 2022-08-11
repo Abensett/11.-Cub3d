@@ -80,10 +80,10 @@ séparées par un ou plusieurs espace(s).
 ![2](https://user-images.githubusercontent.com/85625233/184053924-2359497a-05e8-4735-9366-8fb0dd9cfd07.gif)
 
 ## Sitographie!
-
-* https://www.youtube.com/watch?v=gYRrGTC7GtA
-* https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW
-* https://permadi.com/1996/05/ray-casting-tutorial-1/#A%20BRIEF%20HISTORY
+* ![Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
+* ![Youtube raycasting tutorial](https://www.youtube.com/watch?v=gYRrGTC7GtA)
+* ![Explanations of raycasting](https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW)
+* ![Other tutorial](https://permadi.com/1996/05/ray-casting-tutorial-1/#A%20BRIEF%20HISTORY)
 
 
 ## 42 Project 121/100
