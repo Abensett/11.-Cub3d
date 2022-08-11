@@ -40,6 +40,12 @@ séparées par un ou plusieurs espace(s).
 
 </details>
 
+#### Bonus
+- [x] ombres
+- [x] textures FLOOR and CEILING
+- [x] colisions
+- [x] armes avec recul et munitions
+- [x] bruitages / musique
 
 
 
@@ -73,4 +79,6 @@ séparées par un ou plusieurs espace(s).
 * https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW
 * https://permadi.com/1996/05/ray-casting-tutorial-1/#A%20BRIEF%20HISTORY
 
-## 42 Project 125/100
+## 42 Project 121/100
+
+Réalisé avec Lee Francesco
