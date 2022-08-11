@@ -74,7 +74,7 @@ séparées par un ou plusieurs espace(s).
   representing the shape of the final rendered image, is also required in most types of ray casting.
 </details>
  
-## Final results 
+## Final result
 
 ## Sitographie
 
