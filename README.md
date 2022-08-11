@@ -75,7 +75,7 @@ séparées par un ou plusieurs espace(s).
 </details>
  
 ## Final result
-
+<img src="https://user-images.githubusercontent.com/85625233/184053891-376e6b61-5319-4a0c-a7d0-cf53d026dcc9.g" width="250" height="250"/>
 ![1](https://user-images.githubusercontent.com/85625233/184053891-376e6b61-5319-4a0c-a7d0-cf53d026dcc9.gif)
 ![2](https://user-images.githubusercontent.com/85625233/184053924-2359497a-05e8-4735-9366-8fb0dd9cfd07.gif)
 
