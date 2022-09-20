@@ -4,7 +4,7 @@ Mon premier RayCaster avec la minilibX.
 1. [Summary](#Raycasting)
 2. [Final Results](#Final-Results)
 3. [Raycasting](#netmask)
-4. [Resources](#Sitographie)
+4. [Ressources](#Sitographie)
 
 ## Final Results
   
