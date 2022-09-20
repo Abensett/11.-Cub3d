@@ -2,11 +2,11 @@
 Mon premier RayCaster avec la minilibX.
 ## Table of Contents
 1. [Summary](#Raycasting)
-2. [Final Results](#Final_result)
+2. [Final Results](#Final-result)
 3. [Raycasting](#netmask)
 4. [Resources](#Sitographie)
 
-## Final result
+## Final Results
   
 <img src="https://user-images.githubusercontent.com/85625233/184053891-376e6b61-5319-4a0c-a7d0-cf53d026dcc9.gif" width="500" height="400"/>  <img src="https://user-images.githubusercontent.com/85625233/184053924-2359497a-05e8-4735-9366-8fb0dd9cfd07.gif" width="500" height="400"/>
 
