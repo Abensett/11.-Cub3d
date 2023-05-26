@@ -77,7 +77,7 @@ séparées par un ou plusieurs espace(s).
   representing the shape of the final rendered image, is also required in most types of ray casting.
 </details>
  
-## Sitographie!
+## Resources
 * [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
 * [Youtube raycasting tutorial](https://www.youtube.com/watch?v=gYRrGTC7GtA)
 * [Explanations of raycasting](https://www.youtube.com/watch?v=js7HW65MmNw&list=PL0H9-oZl_QOHM34HvD3DiGmwmj5X7GvTW)
